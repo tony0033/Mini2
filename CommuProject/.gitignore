@@ -1,5 +1,12 @@
+<<<<<<< HEAD
 /build/
 .classpath
 .settings/
 .project
+=======
+/build/
+.classpath
+.settings/
+.project
+>>>>>>> refs/remotes/origin/master
 META-INF
