@@ -12,9 +12,6 @@
 
 
 <%
-
-	
-
 if(session.getAttribute("id")==null){
 String id = request.getParameter("id");
 	MemberDAO dao = new MemberDAO();
