@@ -1,6 +1,5 @@
-<%@page import="bean.MemberDAO"%>
 <%@page import="bean.MemberDTO"%>
-<%@page import="com.mysql.fabric.xmlrpc.base.Member"%>
+<%@page import="bean.MemberDAO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -11,7 +10,6 @@
 </head>
 <body>
 
-
 <%
 
 
@@ -21,34 +19,45 @@ MemberDAO dao =new MemberDAO();
 MemberDTO dto =dao.select(id1); 
 
 
-if(id1.equals(dto.getId())&&pw.equals(dto.getPw())){
+if(pw.equals(dto.getPw())) {
 
-
-
-if(session.getAttribute("id")==null){
  
 String id = request.getParameter("id");
 session.setAttribute("id", id);
-
-} 
 %>
-
-<%=session.getAttribute("id")%>님 환영합니다.<br>
-유료포인트:<%=dto.getPay()%><br>
-기본포인트:<%=dto.getFree()%><br>
-경험치:<%=dto.getExp()%><br>
-
-<a href="logout.jsp">로그아웃</a>
-
-<a href="MemberInfo.jsp?id=<%=dto.getId()%>">개인정보변경</a>
+<jsp:forward page="login.jsp"></jsp:forward> 
 <%
+}else{
+	
+	
+		%>
+	<div id="fx">
+<table>
+<form action="login2.jsp">
+<tr>
+<td>아이디:<input type="text" name="id"></td>
+<td rowspan="2"><input type="submit" value="로그인"></td>
+</tr>
+<tr>
+<td>패스워드:<input type="text" name="pw"></td>
+</tr>
+</form>
+</table>
+
+<br><br>
+<table>
+<form action="join.html">
+<td><input type="submit" value="회원가입"></td>
+</form>
+<form action="SearchPw.jsp">
+<td><input type="submit" value="비밀번호찾기"></td>
+</form>
+</table>
+</div>
+	<%
+	
 }
-else{
-	out.print("아이디와 비번이 다릅니다.");
 %>
-	<a href="login.html">로그인 화면으로</a>
-<% 	
-}
-%>
+
 </body>
 </html>

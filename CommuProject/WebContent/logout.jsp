@@ -7,9 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-<% session.removeAttribute("id");%>
-<% session.removeAttribute("pw");%>
-<% session.removeAttribute("name");%>
+<% session.invalidate();%>
 로그아웃 되었습니다.
 <a href=login.html>로그인화면으로</a>
 </body>
