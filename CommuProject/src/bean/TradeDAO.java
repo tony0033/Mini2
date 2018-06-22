@@ -18,14 +18,13 @@ public class TradeDAO {
 	public void insert(TradeDTO dto) throws Exception {
 		con = pool.getConnection();
 		
-		String sql = "insert into Trade values(?,?,?,?,0)";
+		String sql = "insert into (name, price, writer, count) trade values(?,?,?,0)";
 		
 		ps = con.prepareStatement(sql);
 		
-		ps.setString(1, dto.getNo());
-		ps.setString(2, dto.getName());
-		ps.setString(3, dto.getPrice());
-		ps.setString(4, dto.getWriter());
+		ps.setString(1, dto.getName());
+		ps.setString(2, dto.getPrice());
+		ps.setString(3, dto.getWriter());
 	
 		ps.executeUpdate();
 		
