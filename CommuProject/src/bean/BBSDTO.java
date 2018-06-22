@@ -1,13 +1,20 @@
 package bean;
 
 public class BBSDTO {
+	private String no;
 	private String title;
 	private String content;
 	private String writer;
 	private String date;
-	private String count;
-	private String blike;
+	private int count;
+	private int blike;
 	
+	public String getNo() {
+		return no;
+	}
+	public void setNo(String no) {
+		this.no = no;
+	}
 	public String getTitle() {
 		return title;
 	}
@@ -32,16 +39,16 @@ public class BBSDTO {
 	public void setDate(String date) {
 		this.date = date;
 	}
-	public String getCount() {
+	public int getCount() {
 		return count;
 	}
-	public void setCount(String count) {
+	public void setCount(int count) {
 		this.count = count;
 	}
-	public String getBlike() {
+	public int getBlike() {
 		return blike;
 	}
-	public void setBlike(String blike) {
+	public void setBlike(int blike) {
 		this.blike = blike;
 	}
 }
