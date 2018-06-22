@@ -11,6 +11,6 @@
 	int no = Integer.parseInt(request.getParameter("no"));
 %>
 
-<%= no %>
+
 </body>
 </html>

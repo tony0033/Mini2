@@ -25,7 +25,7 @@
 	<tr>
 		<td align="right" width="200px">
 			<input type = "submit" value = "작성">
-			<button type = "button" onclick = "location.href = 'main.jsp'">돌아가기</button>
+			<button type = "button" onclick = "location.href = '../main.jsp'">돌아가기</button>
 		</td>
 	</tr>
 </table>
