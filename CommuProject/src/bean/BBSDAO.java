@@ -18,7 +18,7 @@ public class BBSDAO {
 	public void insert(BBSDTO dto) throws Exception {
 		con = pool.getConnection();
 		
-		String sql = "insert into BBS values(?,?,?,?,?,?,?)";
+		String sql = "insert into BBS values(?,?,?,?,?,0,0)";
 		
 		ps = con.prepareStatement(sql);
 		
@@ -27,8 +27,6 @@ public class BBSDAO {
 		ps.setString(3, dto.getContent());
 		ps.setString(4, dto.getWriter());
 		ps.setString(5, dto.getDate());
-		ps.setInt(6, dto.getCount());
-		ps.setInt(7, dto.getBlike());
 		ps.executeUpdate();
 		
 		pool.freeConnection(con, ps);
@@ -59,6 +57,7 @@ public class BBSDAO {
 		
 		ps = con.prepareStatement(sql);
 		
+		dto.setCount(dto.getCount()+1);
 		ps.setInt(1, dto.getCount());
 		ps.setString(2, dto.getNo());
 		
@@ -73,6 +72,7 @@ public class BBSDAO {
 		
 		ps = con.prepareStatement(sql);
 		
+		dto.setBlike(dto.getBlike()+1);
 		ps.setInt(1, dto.getBlike());
 		ps.setString(2, dto.getNo());
 		
