@@ -11,11 +11,11 @@
 </head>
 <body>
 <center>
-<table>
+<table border = "1">
 	<tr>
-		<td>no</td>
-		<td>제목</td>
-		<td>작성자</td>
+		<td align = "center" width = "10px">no</td>
+		<td align = "center" width = "300px">제목</td>
+		<td align = "center" width = "100px">작성자</td>
 	</tr>
 	<%
 		BBSDAO dao = new BBSDAO();
@@ -24,13 +24,20 @@
 			BBSDTO dto = (BBSDTO)list.get(i);
 	%>
 		<tr>
-			<td><%= dto.getNo() %></td>
-			<td><%= dto.getTitle() %></td>
-			<td><%= dto.getWriter() %></td>
+			<td align = "center" width = "10px"><%= dto.getNo() %></td>
+			<td align = "center" width = "300px"><%= dto.getTitle() %></td>
+			<td align = "center" width = "100px"><%= dto.getWriter() %></td>
 		</tr>	
 	<%
 		}
 	%>
+</table>
+<table width = "430px">
+	<tr>
+		<td align = "right">
+			<button type = "button" onclick = "location.href = 'new.jsp'">작성</button>
+		</td>
+	</tr>
 </table>
 </center>
 </body>
