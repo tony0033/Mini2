@@ -18,8 +18,8 @@ public class BBSDAO {
 	public void insert(BBSDTO dto) throws Exception {
 		con = pool.getConnection();
 		
-		String sql = "insert into (title, content, writer, date, count, blike) "
-				+ "BBS values(?,?,?,?,0,0)";
+		String sql = "insert into bbs (title, content, writer, date, count, blike) "
+				+ "values(?,?,?,?,0,0)";
 		
 		ps = con.prepareStatement(sql);
 		

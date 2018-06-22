@@ -18,7 +18,7 @@ public class TradeDAO {
 	public void insert(TradeDTO dto) throws Exception {
 		con = pool.getConnection();
 		
-		String sql = "insert into (name, price, writer, count) trade values(?,?,?,0)";
+		String sql = "insert into trade (name, price, writer, count) values(?,?,?,0)";
 		
 		ps = con.prepareStatement(sql);
 		
