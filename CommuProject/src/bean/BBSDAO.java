@@ -35,16 +35,14 @@ public class BBSDAO {
 	public void update(BBSDTO dto) throws Exception {
 		con = pool.getConnection();
 		
-		String sql = "update BBS set title = ? , content = ?, date = ?, count = ?, blike = ? where no = ?";
+		String sql = "update BBS set title = ? , content = ?, date = ? where no = ?";
 		
 		ps = con.prepareStatement(sql);
 		
 		ps.setString(1, dto.getTitle());
 		ps.setString(2, dto.getContent());
 		ps.setString(3, dto.getDate());
-		ps.setInt(4, dto.getCount());
-		ps.setInt(5, dto.getBlike());
-		ps.setString(6, dto.getNo());
+		ps.setString(4, dto.getNo());
 		
 		ps.executeUpdate();
 		
