@@ -18,15 +18,15 @@ public class BBSDAO {
 	public void insert(BBSDTO dto) throws Exception {
 		con = pool.getConnection();
 		
-		String sql = "insert into BBS values(?,?,?,?,?,0,0)";
+		String sql = "insert into bbs (title, content, writer, date, count, blike) "
+				+ "values(?,?,?,?,0,0)";
 		
 		ps = con.prepareStatement(sql);
 		
-		ps.setString(1, dto.getNo());
-		ps.setString(2, dto.getTitle());
-		ps.setString(3, dto.getContent());
-		ps.setString(4, dto.getWriter());
-		ps.setString(5, dto.getDate());
+		ps.setString(1, dto.getTitle());
+		ps.setString(2, dto.getContent());
+		ps.setString(3, dto.getWriter());
+		ps.setString(4, dto.getDate());
 		ps.executeUpdate();
 		
 		pool.freeConnection(con, ps);
