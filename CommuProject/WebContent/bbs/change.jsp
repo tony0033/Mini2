@@ -1,6 +1,6 @@
-<%@page import="bean.BBSDAO"%>
-<%@page import="bean.BBSDTO"%>
 <%@page import="java.util.Date"%>
+<%@page import="bean.BBSDTO"%>
+<%@page import="bean.BBSDAO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -11,28 +11,27 @@
 </head>
 <body>
 	<%
+		int no = Integer.parseInt(request.getParameter("no"));
 		String title = request.getParameter("title");
 		String content = request.getParameter("content");
-		
-		String writer = (String)session.getAttribute("id");
 		
 		Date date1 = new Date();
 		String date = (date1.getYear()-100) + "-" + date1.getMonth() + "-"
 					  + date1.getDay();
 		
+		BBSDAO dao = new BBSDAO();
 		BBSDTO dto = new BBSDTO();
+		dto.setNo(no);
 		dto.setTitle(title);
 		dto.setContent(content);
-		dto.setWriter(writer);
 		dto.setDate(date);
-		BBSDAO dao = new BBSDAO();
-		dao.insert(dto);
+		
+		dao.update(dto);
 	%>
 	
 	<script type="text/javascript">
-		confirm("작성완료");
+		alert("수정 완료 되었습니다!");
+		location.replace("bbs.jsp?no=<%=no%>")
 	</script>
-	
-	<jsp:forward page="bbsList.jsp"></jsp:forward>
 </body>
 </html>

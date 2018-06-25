@@ -7,13 +7,29 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
-</head>
-<body>
-<%
+
+<% 
 	int no = Integer.parseInt(request.getParameter("no"));
-	BBSDAO dao = new BBSDAO();
+	BBSDAO dao = new BBSDAO(); 
 	BBSDTO dto = dao.select(no);
 %>
+
+
+<script type="text/javascript">
+	function info(){
+		alert("추천하기 완료!");
+	}
+	function check(){
+		var check = confirm("삭제하시겠습니까?");
+		if(check){
+			location.replace("deleteBBS.jsp?no=<%=dto.getNo()%>");
+		}else{
+			return;
+		}
+	}
+</script>
+</head>
+<body>
 <center>
 	<table border = "1">
 		<tr>
@@ -35,12 +51,13 @@
 					*/				
 					if(id.equals(dto.getWriter())){
 				%>
-						<button type = "button" onclick = "location.href = 'changeBBS.jsp?no =<%=dto.getNo() %>'">수정</button>
-				<%		
+						<button type = "button" onclick = "location.href ='changeBBS.jsp?no=<%=dto.getNo()%>'">수정</button>
+						<button type = "button" onclick = check();>제거</button>
+				<%
 					}else if(id.equals("")){
 					}
 				%>
-				<button type = "button" onclick = "location.href = 'likeUp.jsp?no=<%= dto.getNo()%>'">추천하기</button>
+				<button type = "button" onclick = "location.href = 'likeUp.jsp?no=<%= dto.getNo()%>';info();">추천하기</button>
 				<button type = "button" onclick = "location.href = 'bbsList.jsp'">돌아가기</button>
 			</td>
 		</tr>

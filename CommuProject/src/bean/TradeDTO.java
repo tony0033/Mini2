@@ -1,17 +1,17 @@
 package bean;
 
 public class TradeDTO {
-	private String no;
+	private int no;
 	private String name;
 	private String price;
 	private String writer;
 	private int count;
 	
 	
-	public String getNo() {
+	public int getNo() {
 		return no;
 	}
-	public void setNo(String no) {
+	public void setNo(int no) {
 		this.no = no;
 	}
 	public String getName() {

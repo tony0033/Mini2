@@ -79,14 +79,14 @@ public class BBSDAO {
 		pool.freeConnection(con, ps);
 	}
 	
-	public void delete(String no) throws Exception {
+	public void delete(int no) throws Exception {
 		con = pool.getConnection();
 		
 		String sql = "delete from BBS where no = ?";
 		
 		ps = con.prepareStatement(sql);
 		
-		ps.setString(1, no);
+		ps.setInt(1, no);
 		
 		ps.executeUpdate();
 		

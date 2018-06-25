@@ -25,8 +25,8 @@
 	%>
 		<tr>
 			<td align = "center" width = "10px"><%= dto.getNo() %></td>
-			<td align = "center" width = "300px"><a href = "trade.jsp?no=<%= dto.getNo() %>"><%= dto.getName() %></a></td>
-			<td align = "center" width = "100px"><%= dto.getWriter() %></td>
+			<td align = "center" width = "300px"><a href = "trade.jsp?no=<%=dto.getNo() %>"><%=dto.getName() %></a></td>
+			<td align = "center" width = "100px"><%=dto.getWriter() %></td>
 		</tr>	
 	<%
 		}
