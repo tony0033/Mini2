@@ -42,7 +42,7 @@ public class BBSDAO {
 		ps.setString(1, dto.getTitle());
 		ps.setString(2, dto.getContent());
 		ps.setString(3, dto.getDate());
-		ps.setString(4, dto.getNo());
+		ps.setInt(4, dto.getNo());
 		
 		ps.executeUpdate();
 		
@@ -57,7 +57,7 @@ public class BBSDAO {
 		
 		dto.setCount(dto.getCount()+1);
 		ps.setInt(1, dto.getCount());
-		ps.setString(2, dto.getNo());
+		ps.setInt(2, dto.getNo());
 		
 		ps.executeUpdate();
 		
@@ -72,7 +72,7 @@ public class BBSDAO {
 		
 		dto.setBlike(dto.getBlike()+1);
 		ps.setInt(1, dto.getBlike());
-		ps.setString(2, dto.getNo());
+		ps.setInt(2, dto.getNo());
 		
 		ps.executeUpdate();
 		
@@ -93,21 +93,21 @@ public class BBSDAO {
 		pool.freeConnection(con, ps);
 	}
 	
-	public BBSDTO select(String no) throws Exception {
+	public BBSDTO select(int no) throws Exception {
 		con = pool.getConnection();
 		
 		String sql = "select * from BBS where no = ?";
 		
 		ps = con.prepareStatement(sql);
 		
-		ps.setString(1, no);
+		ps.setInt(1, no);
 		
 		rs = ps.executeQuery();
 		BBSDTO dto = null;
 		while(rs.next()) {
 			dto = new BBSDTO();
 			
-			dto.setNo(rs.getString(1));
+			dto.setNo(rs.getInt(1));
 			dto.setTitle(rs.getString(2));
 			dto.setContent(rs.getString(3));
 			dto.setWriter(rs.getString(4));
@@ -133,7 +133,7 @@ public class BBSDAO {
 		while(rs.next()) {
 			BBSDTO dto = new BBSDTO();
 			
-			dto.setNo(rs.getString(1));
+			dto.setNo(rs.getInt(1));
 			dto.setTitle(rs.getString(2));
 			dto.setContent(rs.getString(3));
 			dto.setWriter(rs.getString(4));
