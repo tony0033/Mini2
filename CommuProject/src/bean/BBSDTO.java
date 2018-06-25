@@ -1,7 +1,7 @@
 package bean;
 
 public class BBSDTO {
-	private String no;
+	private int no;
 	private String title;
 	private String content;
 	private String writer;
@@ -9,10 +9,11 @@ public class BBSDTO {
 	private int count;
 	private int blike;
 	
-	public String getNo() {
+
+	public int getNo() {
 		return no;
 	}
-	public void setNo(String no) {
+	public void setNo(int no) {
 		this.no = no;
 	}
 	public String getTitle() {
