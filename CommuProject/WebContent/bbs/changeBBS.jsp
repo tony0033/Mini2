@@ -15,24 +15,27 @@
 	BBSDTO dto = dao.select(no);
 %>
 <center>
-<form action = "chage.jsp">
-<table>
-	<tr>
-		<td width = "50px" align = "center">제목</td>
-		<td width = "150px"><input type = "text" name = "title" value = <%= dto.getTitle() %>></td>
-	</tr>
-	<tr>
-		<td width = "50px" align = "center">내용</td>
-		<td width = "150px">
-			<textarea rows="10" cols="22"><%= dto.getContent() %></textarea>
-		</td>
-	</tr>
-</table>
+<form action = "change.jsp">
+<input name="no" value=<%=dto.getNo() %> type="hidden">
+<table border = "1">
+		<tr>
+			<td align = "center" width = "50px">제목</td>
+			<td align = "center" width = "300px">
+				<textarea rows="1" cols="42" style="resize:none;" name = "title"><%=dto.getTitle() %></textarea>
+			</td>
+		</tr>
+		<tr>
+			<td align = "center" width = "50px">내용</td>
+			<td align = "center" width = "300px" height = "300px">
+				<textarea rows="20" cols="42" style="resize:none;" name = "content"><%=dto.getContent() %></textarea>
+			</td>
+		</tr>
+	</table>
 <table>
 	<tr>
 		<td align="right" width="200px">
 			<input type = "submit" value = "수정완료">
-			<button type = "button" onclick = "location.href = 'bbs.jsp?no = <%= dto.getNo()%>'">돌아가기</button>
+			<button type = "button" onclick = "location.href ='bbs.jsp?no=<%=dto.getNo()%>'">돌아가기</button>
 		</td>
 	</tr>
 </table>

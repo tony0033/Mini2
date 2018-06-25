@@ -13,8 +13,12 @@
 		int no = Integer.parseInt(request.getParameter("no"));
 		
 		BBSDAO dao = new BBSDAO();
+		dao.delete(no);
 	%>
-	
+	<script type="text/javascript">
+		alert("삭제 되었습니다.");
+		location.replace("bbsList.jsp");
+	</script>
 	
 </body>
 </html>

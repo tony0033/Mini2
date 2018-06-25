@@ -40,12 +40,13 @@ public class TradeDAO {
 		
 		ps.setString(1, dto.getName());
 		ps.setString(2, dto.getPrice());
-		ps.setString(3, dto.getNo());
+		ps.setInt(3, dto.getNo());
 		
 		ps.executeUpdate();
 		
 		pool.freeConnection(con, ps);
 	}
+	
 	public void updateCount(TradeDTO dto) throws Exception {
 		con = pool.getConnection();
 		
@@ -56,42 +57,42 @@ public class TradeDAO {
 		dto.setCount(dto.getCount() + 1);
 		
 		ps.setInt(1, dto.getCount());
-		ps.setString(2, dto.getNo());
+		ps.setInt(2, dto.getNo());
 		
 		ps.executeUpdate();
 		
 		pool.freeConnection(con, ps);
 	}
 	
-	public void delete(String no) throws Exception {
+	public void delete(int no) throws Exception {
 		con = pool.getConnection();
 		
 		String sql = "delete from Trade where no = ?";
 		
 		ps = con.prepareStatement(sql);
 		
-		ps.setString(1, no);
+		ps.setInt(1, no);
 		
 		ps.executeUpdate();
 		
 		pool.freeConnection(con, ps);
 	}
 	
-	public TradeDTO select(String no) throws Exception {
+	public TradeDTO select(int no) throws Exception {
 		con = pool.getConnection();
 		
 		String sql = "select * from Trade where no = ?";
 		
 		ps = con.prepareStatement(sql);
 		
-		ps.setString(1, no);
+		ps.setInt(1, no);
 		
 		rs = ps.executeQuery();
 		TradeDTO dto = null;
 		while(rs.next()) {
 			dto = new TradeDTO();
 			
-			dto.setNo(rs.getString(1));
+			dto.setNo(rs.getInt(1));
 			dto.setName(rs.getString(2));
 			dto.setPrice(rs.getString(3));
 			dto.setWriter(rs.getString(4));
@@ -115,7 +116,7 @@ public class TradeDAO {
 		while(rs.next()) {
 			TradeDTO dto = new TradeDTO();
 			
-			dto.setNo(rs.getString(1));
+			dto.setNo(rs.getInt(1));
 			dto.setName(rs.getString(2));
 			dto.setPrice(rs.getString(3));
 			dto.setWriter(rs.getString(4));
