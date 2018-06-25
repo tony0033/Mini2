@@ -19,8 +19,10 @@
 </style>
 </head>
 <body>
-
+	
 <% 
+MemberDAO dao =new MemberDAO();
+
 if(session.getAttribute("id")==null){
 %>
 <div id="fx">
@@ -37,19 +39,18 @@ if(session.getAttribute("id")==null){
 </table>
 
 <br><br>
-<table>
+<table border="1">
 <form action="join.html">
 <td><input type="submit" value="회원가입"></td>
 </form>
 <form action="SearchPw.jsp">
-<td><input type="submit" value="비밀번호찾기"></td>
+<td><input type="submit" value="비밀번호찾기"> <button onclick=""></button></td>
 </form>
 </table>
 </div>
 
 <%} else{ 
 	String id1 = request.getParameter("id");
-	MemberDAO dao =new MemberDAO();
 	MemberDTO dto =dao.select(id1); 
 %>
 
@@ -63,5 +64,10 @@ if(session.getAttribute("id")==null){
 <a href="MemberInfo.jsp?id=<%=dto.getId()%>">개인정보변경</a>
 
 <%} %>
+		
+	
+
+
+
 </body>
 </html>

@@ -5,6 +5,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
+
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 </head>
@@ -28,12 +29,11 @@ session.setAttribute("id", id);
 <jsp:forward page="login.jsp"></jsp:forward> 
 <%
 }else{
-	
-	
 		%>
 	<div id="fx">
+	<form action="login2.jsp">
+	
 <table>
-<form action="login2.jsp">
 <tr>
 <td>아이디:<input type="text" name="id"></td>
 <td rowspan="2"><input type="submit" value="로그인"></td>
@@ -41,23 +41,22 @@ session.setAttribute("id", id);
 <tr>
 <td>패스워드:<input type="text" name="pw"></td>
 </tr>
-</form>
 </table>
+</form>
 
 <br><br>
-<table>
-<form action="join.html">
-<td><input type="submit" value="회원가입"></td>
-</form>
-<form action="SearchPw.jsp">
-<td><input type="submit" value="비밀번호찾기"></td>
-</form>
+
+<table border="1">
+<tr>
+<td><a href ="join.jsp">회원가입</a></td>  
+<td><a href = "SearchPw.jsp">비밀번호 찾기</a></td>
+</tr>
 </table>
+
+
+
 </div>
-	<%
-	
-}
-%>
+<% } %>
 
 </body>
 </html>

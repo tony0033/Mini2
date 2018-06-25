@@ -1,6 +1,5 @@
 <%@page import="bean.MemberDAO"%>
 <%@page import="bean.MemberDTO"%>
-<%@page import="com.mysql.fabric.xmlrpc.base.Member"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -13,6 +12,7 @@
 
 
 <%
+<<<<<<< HEAD
 
 
 String id1 = request.getParameter("id");
@@ -25,11 +25,20 @@ if(id1.equals(dto.getId())&&pw.equals(dto.getPw())){
 
 
 
+=======
+>>>>>>> branch 'master' of https://github.com/tony0033/Mini2.git
 if(session.getAttribute("id")==null){
  
 String id = request.getParameter("id");
+	MemberDAO dao = new MemberDAO();
+	MemberDTO dto = dao.select(id); 
 session.setAttribute("id", id);
 
+<<<<<<< HEAD
+=======
+String name = dto.getName();
+session.setAttribute("name", name);
+>>>>>>> branch 'master' of https://github.com/tony0033/Mini2.git
 } 
 %>
 
