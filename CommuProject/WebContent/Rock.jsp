@@ -8,7 +8,9 @@
 <title>Insert title here</title>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script type="text/javascript">
+
 $(document).ready(function(){
+	
 var roll=1;
  playroll = setInterval(function() {
 	roll++;
@@ -66,18 +68,30 @@ function paper(ran){
 
 
 function Alert (msg){
-	var k = window.open("","","width=300,height=200");
+	var k = window.open("","","width=320,height=250");
 	k.document.open();
 	k.document.write(msg);
 	k.document.close();
 	
 }
+function doDisplay(){
+    var con = document.getElementById("show");
+    if(con.style.display=='none'){
+        con.style.display = 'block';
+    }else{
+        con.style.display = 'none';
+    }
+}
+
+
 </script>
 <style type="text/css">
 img{
 border: 1px solid gray;
 display: block;
 margin: auto;
+width: 200px;
+height: 200px;
 }
 </style>
 </head>
@@ -93,7 +107,10 @@ int num = ran.nextInt(3)+1;
 <button onclick="scissors(<%= num %>)">가위</button>
 
 <button onclick="rock(<%= num %>)">바위</button>
-<button onclick="paper(<%= num %>)">보</button>
+<button onclick="paper(<%= num %>)">보</button><br>
+<button onclick="doDisplay()">경기 규칙</button>
+<p id = "show" > 한번할때 500포인트씩 사용됩니다<br>
+비길경우 전부 돌려받고 이길경우 2배의 포인트를 획득합니다.</p>
 </center>
 </body>
 </html>

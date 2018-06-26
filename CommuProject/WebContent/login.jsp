@@ -16,6 +16,7 @@
 		height: 150px;
 		background: lime;
 	}
+	
 </style>
 </head>
 <body>
@@ -26,26 +27,24 @@ MemberDAO dao =new MemberDAO();
 if(session.getAttribute("id")==null){
 %>
 <div id="fx">
-<table>
 <form action="login2.jsp">
+
+<table>
 <tr>
-<td>아이디:<input type="text" name="id"></td>
+<td><input type="text" name="id" value ="아이디" onfocus="this.value=''" ></td>
 <td rowspan="2"><input type="submit" value="로그인"></td>
 </tr>
 <tr>
-<td>패스워드:<input type="text" name="pw"></td>
+<td><input type="text" name="pw" value = "비밀번호" onfocus="this.type='password',this.value=''" ></td>
 </tr>
-</form>
 </table>
+</form>
 
-<br><br>
-<table border="1">
-<form action="join.html">
-<td><input type="submit" value="회원가입"></td>
-</form>
-<form action="SearchPw.jsp">
-<td><input type="submit" value="비밀번호찾기"> <button onclick=""></button></td>
-</form>
+<table>
+<tr>
+<td>회원가입</td>
+<td>비밀번호 찾기</td>
+</tr>
 </table>
 </div>
 
@@ -65,7 +64,7 @@ if(session.getAttribute("id")==null){
 
 <%} %>
 		
-	
+
 
 
 
