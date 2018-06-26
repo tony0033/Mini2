@@ -14,8 +14,9 @@
 <table border = "1">
 	<tr>
 		<td align = "center" width = "10px">no</td>
-		<td align = "center" width = "300px">제목</td>
+		<td align = "center" width = "250px">제목</td>
 		<td align = "center" width = "100px">작성자</td>
+		<td align = "center" width = "50px">조회수</td>
 	</tr>
 	<%
 		TradeDAO dao = new TradeDAO();
@@ -25,8 +26,9 @@
 	%>
 		<tr>
 			<td align = "center" width = "10px"><%= dto.getNo() %></td>
-			<td align = "center" width = "300px"><a href = "trade.jsp?no=<%=dto.getNo() %>"><%=dto.getName() %></a></td>
+			<td align = "center" width = "250px"><a href = "tCountUp.jsp?no=<%=dto.getNo() %>"><%=dto.getName() %></a></td>
 			<td align = "center" width = "100px"><%=dto.getWriter() %></td>
+			<td align = "center" width = "50px"><%=dto.getCount() %></td>
 		</tr>	
 	<%
 		}

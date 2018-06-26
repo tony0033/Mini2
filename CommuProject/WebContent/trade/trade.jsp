@@ -13,6 +13,7 @@
 	int no = Integer.parseInt(request.getParameter("no"));
 	TradeDAO dao = new TradeDAO();
 	TradeDTO dto = dao.select(no);
+	
 %>
 <script type="text/javascript">
 	function info(){
@@ -21,7 +22,7 @@
 	function check(){
 		var check = confirm("삭제하시겠습니까?");
 		if(check){
-			location.replace("deleteBBS.jsp?no=<%=dto.getNo()%>");
+			location.replace("deleteTrade.jsp?no=<%=dto.getNo()%>");
 		}else{
 			return;
 		}
@@ -38,6 +39,20 @@
 			<td align = "center" width = "70px">가격</td>
 			<td align = "center" width = "280px"><%= dto.getPrice()%></td>
 		</tr>
+		<tr>
+			<td align = "center" width = "70px">판매현황</td>
+			<%
+				if(dto.getStatus()==0){
+			%>
+				<td align = "center" width = "280px">판매중</td>
+			<%
+				}else{
+			%>	
+				<td align = "center" width = "280px">판매완료</td>
+			<%
+				}
+			%>
+		</tr>
 	</table>
 	<table>
 		<tr>
@@ -48,17 +63,25 @@
 						로 수정하기!!
 					*/				
 					if(id.equals(dto.getWriter())){
+						if(dto.getStatus()==0){
 				%>
 						<button type = "button" onclick = "location.href ='changeTrade.jsp?no=<%=dto.getNo()%>'">수정</button>
 						<button type = "button" onclick = check();>제거</button>
 				<%
-					}else{
+						}else{
 				%>
-						<button type = "button" onclick ="buy.jsp">구매</button>
+						<button type = "button" onclick="location.href='receive.jsp?no=<%=dto.getNo() %>'">받기</button>
+				<% 
+							}
+					}else{
+						if(dto.getStatus()==0){
+				%>	
+							<button type = "button" onclick ="location.href='buy.jsp?no=<%=dto.getNo()%>'">구매</button>
 				<%
+						}else{
+						}
 					}
 				%>
-				<button type = "button" onclick = "location.href = 'likeUp2.jsp?no=<%= dto.getNo()%>';info();">추천하기</button>
 				<button type = "button" onclick = "location.href = 'tradeList.jsp'">돌아가기</button>
 			</td>
 		</tr>

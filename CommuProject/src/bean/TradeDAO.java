@@ -18,7 +18,7 @@ public class TradeDAO {
 	public void insert(TradeDTO dto) throws Exception {
 		con = pool.getConnection();
 		
-		String sql = "insert into trade (name, price, writer, count) values(?,?,?,0)";
+		String sql = "insert into trade (name, price, writer, count, status) values(?,?,?,0,0)";
 		
 		ps = con.prepareStatement(sql);
 		
@@ -64,6 +64,23 @@ public class TradeDAO {
 		pool.freeConnection(con, ps);
 	}
 	
+	public void updateStatus(TradeDTO dto) throws Exception {
+		con = pool.getConnection();
+		
+		String sql = "update trade set status = ? where no = ?";
+		
+		ps = con.prepareStatement(sql);
+		
+		dto.setStatus(1);
+		
+		ps.setInt(1, dto.getStatus());
+		ps.setInt(2, dto.getNo());
+		
+		ps.executeUpdate();
+		
+		pool.freeConnection(con, ps);
+	}
+	
 	public void delete(int no) throws Exception {
 		con = pool.getConnection();
 		
@@ -97,6 +114,7 @@ public class TradeDAO {
 			dto.setPrice(rs.getString(3));
 			dto.setWriter(rs.getString(4));
 			dto.setCount(rs.getInt(5));
+			dto.setStatus(rs.getInt(6));
 		}
 		
 		pool.freeConnection(con, ps);
@@ -121,6 +139,7 @@ public class TradeDAO {
 			dto.setPrice(rs.getString(3));
 			dto.setWriter(rs.getString(4));
 			dto.setCount(rs.getInt(5));
+			dto.setStatus(rs.getInt(6));
 		
 			list.add(dto);
 		}
