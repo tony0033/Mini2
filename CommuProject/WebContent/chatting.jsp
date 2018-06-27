@@ -4,7 +4,14 @@
 <html>
 <head>
     <title>Testing websockets</title>
+<style type="text/css">
+fieldset {
+	width:290px;
+}
+</style>
+
 </head>
+
 <body>
 <%
 String id = (String)session.getAttribute("id");
@@ -13,14 +20,13 @@ if (id==null){
 }
 %> 
     <fieldset>
-        <textarea id="messageWindow" rows="10" cols="50" readonly="readonly"></textarea>
+        <textarea id="messageWindow" rows="10" cols="25" readonly="readonly" ></textarea>
         <br/>
         <input id="inputMessage" type="text"/>
         <input type="submit" value="send" onclick="send()" />
     </fieldset><script type="text/javascript">
     </script>
-    
-</body>
+    </body>
     <script type="text/javascript">
         var textarea = document.getElementById("messageWindow");
         var webSocket = new WebSocket('ws://localhost:8888/broad/broadcasting');
@@ -53,4 +59,6 @@ if (id==null){
     }
     
   </script>
+  
+  
 </html>

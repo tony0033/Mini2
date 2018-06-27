@@ -84,6 +84,11 @@ height: 300px;
 border: 1;
 
 }
+#chatting{
+width:290px;
+float: left;
+border:1px solid red;
+}
 </style>
 </head>
 <body>
@@ -96,7 +101,7 @@ border: 1;
 
 </div>
 <div id = "bbs">
-<%@include file="bbsmain.jsp" %>
+<%@include file="bbsmain.jsp"%>
 </div>
 <div id = "game">
 <table id = "gametable" border="1">
@@ -107,7 +112,13 @@ border: 1;
 <td align="center" valign="top"><a href="Rock.jsp">가위바위보</a></td>
 </tr>
 </table></div>
-<div id = "trade"><img src = "img/trade.jpg" width="800" height="400"> </div>
+<div id = "chatting">
+
+</div>
+
+<div id = "trade">
+<%@include file="trademain.jsp"%>
+ </div>
 </div>
 
 <div id = bottom> </div>

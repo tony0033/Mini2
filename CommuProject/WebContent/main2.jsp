@@ -45,6 +45,9 @@
 	height: 250px;
 	padding-left: 30px;
 }
+#chatting{
+	width: 300px
+}
 
 #rightLay {
 	width: 800px;
@@ -53,7 +56,7 @@
 
 #adver{
 	float: left;
-	width: 900px;
+	width: 700px;
 	height : 150px;
 	padding-left: 50px;
 	padding-top: 30px;
@@ -62,13 +65,12 @@
 #bbs{
 padding-left:100px;
 padding-top:100px;
-float:  right;
-	width: 900px;
+	float:  right;
+	width: 800px;
 	height: 400px;
 	
 }
 #trade{
-border:1px solid red;
 	padding-left: 100px;
 	float: right;
 	width: 800px;
@@ -96,6 +98,9 @@ border:1px solid red;
 						<td align="center" valign="top"><a href="Rock.jsp">가위바위보</a></td>
 					</tr>
 				</table>
+			</div>
+			<div id="chatting">
+				<%@include file="chatting.jsp" %>
 			</div>
 		</div>
 		<div id="rightLay">
