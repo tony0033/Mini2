@@ -20,7 +20,10 @@
 	</tr>
 	<%
 		TradeDAO dao = new TradeDAO();
-		ArrayList list = dao.selectAll(0,5);
+		int pageNum = Integer.parseInt(request.getParameter("pageNum"));
+		int start = (pageNum-1)*15;
+		int end = pageNum*15;
+		ArrayList list = dao.selectAll(start,end);
 		for(int i = 0 ; i < list.size() ; i ++){
 			TradeDTO dto = (TradeDTO)list.get(i);
 	%>
@@ -36,6 +39,23 @@
 </table>
 <table width = "430px">
 	<tr>
+		<td align = "center">
+			<%
+				int size = 15;
+				int tot;
+				int cnt = dao.tradeCount();
+				tot = cnt/size;
+				if(cnt % size != 0){
+					tot++;
+				}
+				for(int i=0;i<tot;i++){
+			%>
+				<a href = "tradePage.jsp?pageNum=<%= i+1 %>">[<%=(i+1) %>]</a>
+			<%
+				}
+			%>
+		</td>
+		
 		<td align = "right">
 			<button type = "button" onclick = "location.href = 'newTrade.jsp'">등록</button>
 		</td>
