@@ -22,9 +22,9 @@
 	</tr>
 	<%
 		BBSDAO dao1 = new BBSDAO();
-		ArrayList list = dao1.selectAll(0,5);
-		for(int i = 0 ; i < list.size() ; i ++){
-			BBSDTO dto = (BBSDTO)list.get(i);
+		ArrayList list1 = dao1.selectAll(0,5);
+		for(int i = 0 ; i < list1.size() ; i ++){
+			BBSDTO dto = (BBSDTO)list1.get(i);
 	%>
 		<tr>
 			<td align = "center" width = "10px"><%= dto.getNo() %></td>

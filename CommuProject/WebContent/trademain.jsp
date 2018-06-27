@@ -19,14 +19,14 @@
 		<td align = "center" width = "50px">조회수</td>
 	</tr>
 	<%
-		TradeDAO dao = new TradeDAO();
-		ArrayList list = dao.selectAll();
-		for(int i = 0 ; i < list.size() ; i ++){
-			TradeDTO dto = (TradeDTO)list.get(i);
+		TradeDAO dao2 = new TradeDAO();
+		ArrayList list2 = dao2.selectAll();
+		for(int i = 0 ; i < list2.size() ; i ++){
+			TradeDTO dto = (TradeDTO)list2.get(i);
 	%>
 		<tr>
 			<td align = "center" width = "10px"><%= dto.getNo() %></td>
-			<td align = "center" width = "250px"><a href = "tCountUp.jsp?no=<%=dto.getNo() %>"><%=dto.getName() %></a></td>
+			<td align = "center" width = "250px"><a href = "trade/tCountUp.jsp?no=<%=dto.getNo() %>"><%=dto.getName() %></a></td>
 			<td align = "center" width = "100px"><%=dto.getWriter() %></td>
 			<td align = "center" width = "50px"><%=dto.getCount() %></td>
 		</tr>	
