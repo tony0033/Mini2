@@ -28,26 +28,11 @@
 		<td class="t1">이름</td>
 		<td class="t2"><input type="text" name="name" value="<%= dto.getName()%>"></td>
 	</tr>
-	<tr>
-		<td class="t1">유료포인트</td>
-		<td class="t2"><input type="text" name="name" value="<%= dto.getPay()%>"></td>
-	</tr>
-	<tr>
-		<td class="t1">기본포인트</td>
-		<td class="t2"><input type="text" name="name" value="<%= dto.getFree()%>"></td>
-	</tr>
-	<tr>
-		<td class="t1">경험치</td>
-		<td class="t2"><input type="text" name="name" value="<%= dto.getExp()%>"></td>
-	</tr>
 	</table>
 	<table>
 	<tr>
-	 <td>수정된 내용 저장<input type="submit" value="저장"><br><br></td>
+	 <td>수정된 내용 저장<input type="submit" value="저장"></td>
 	</tr> 	
-	<tr>
-	<td><button type="button" onClick="location.href='main.html'">--메인으로--</button></td>
-	</tr>
 	</table>
 </form>
 </body>

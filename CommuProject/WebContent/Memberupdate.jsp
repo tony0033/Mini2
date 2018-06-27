@@ -16,7 +16,9 @@
 <% 
 MemberDAO dao = new MemberDAO();
 dao.update(dto);
-response.sendRedirect("login.html");
 %>
+개인정보가 수정되었습니다.
+
+<a href="main.jsp?id=<%=dto.getId()%>?pw=<%=dto.getPw()%>">메인으로</a>
 </body>
 </html>

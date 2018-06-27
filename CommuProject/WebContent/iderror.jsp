@@ -7,8 +7,10 @@
 <title>Insert title here</title>
 </head>
 <body>
-<% session.invalidate();%>
-로그아웃 되었습니다.
-<a href=login.html>로그인화면으로</a>
+<script type="text/javascript">
+alert("아이디가 존재하지 않습니다.");
+window.location.href="login2.jsp?id=admin&pw=2";
+
+</script>
 </body>
 </html>
