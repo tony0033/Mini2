@@ -2,62 +2,120 @@
 <%@page import="bean.MemberDTO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="UTF-8">
 <title>Insert title here</title>
+<style type="text/css">
+*{
+}
+#total{
+	
+	width: 1200px;
+	
+	border:1px solid red;
+}
+#top {
+	width: 1200px;
+	height: 100px;
+	background-color: white;
+	border:1px solid red;
+}
+#adver{
+float: left;
+	padding-left: 100px;
+	width: 750px;
+border:1px solid red;
+}
+#logo{
+float:  left;
+	padding-left:50px;
+	width:200px;
+	border:1px solid red;
+}
+
+#content{
+padding-top:150px;
+	width:1200px;
+border:1px solid red;
+}
+#login{
+
+width:290px;
+float:  left;
+border:1px solid red;
+padding-bottom: 100px;
+}
+#bbs{
+border:1px solid red;
+padding-left:100px;
+float:  right;
+	width: 800px;
+	height: 400px;
+	
+}
+#trade{
+border:1px solid red;
+	padding-left: 100px;
+	float: right;
+	width: 800px;
+	height: 400px;
+
+}
+#bottom{
+width:1200px;
+float:right;
+border:1px solid red;
+background-color: blue;
+height: 200px;
+}
+#game{
+width:290px;
+float: left;
+border:1px solid red;
+}
+#gametable{
+
+width: 300px;
+height: 300px;
+border: 1;
+
+}
+</style>
 </head>
 <body>
+<div id = "total">
+<div id = "top">
+<div id = "logo"><img src=img/23.jpeg width="200" height="100"></div>
+<div id = "adver"><img src=img/adver.jpg width="750" height="100"></div>
+</div>
+<div id = "content">
+<div id = "login">
+<%@include file="login.jsp" %>
+
+</div>
+<div id = "bbs">
+<%@include file="bbsmain.jsp" %>
+</div>
+<div id = "game">
+<table id = "gametable" border="1">
+<tr>
+<td align="center" height="20px">포인트게임</td>
+</tr>
+<tr>
+<td align="center" valign="top"><a href="Rock.jsp">가위바위보</a></td>
+</tr>
+</table></div>
+<div id = "trade"><img src = "img/trade.jpg" width="800" height="400"> </div>
+</div>
+
+<div id = bottom> </div>
+</div>
 
 
-<%
-<<<<<<< HEAD
-
-
-String id1 = request.getParameter("id");
-String pw = request.getParameter("pw");
-MemberDAO dao =new MemberDAO();
-MemberDTO dto =dao.select(id1); 
-
-
-if(id1.equals(dto.getId())&&pw.equals(dto.getPw())){
 
 
 
-=======
->>>>>>> branch 'master' of https://github.com/tony0033/Mini2.git
-if(session.getAttribute("id")==null){
- 
-String id = request.getParameter("id");
-	MemberDAO dao = new MemberDAO();
-	MemberDTO dto = dao.select(id); 
-session.setAttribute("id", id);
-
-<<<<<<< HEAD
-=======
-String name = dto.getName();
-session.setAttribute("name", name);
->>>>>>> branch 'master' of https://github.com/tony0033/Mini2.git
-} 
-%>
-
-<%=session.getAttribute("id")%>님 환영합니다.<br>
-유료포인트:<%=dto.getPay()%><br>
-기본포인트:<%=dto.getFree()%><br>
-경험치:<%=dto.getExp()%><br>
-
-<a href="logout.jsp">로그아웃</a>
-
-<a href="MemberInfo.jsp?id=<%=dto.getId()%>">개인정보변경</a>
-<%
-}
-else{
-	out.print("아이디와 비번이 다릅니다.");
-%>
-	<a href="login.html">로그인 화면으로</a>
-<% 	
-}
-%>
 </body>
 </html>

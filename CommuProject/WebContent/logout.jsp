@@ -9,6 +9,6 @@
 <body>
 <% session.invalidate();%>
 로그아웃 되었습니다.
-<a href=login.html>로그인화면으로</a>
+<a href=main.html>로그인화면으로</a>
 </body>
 </html>

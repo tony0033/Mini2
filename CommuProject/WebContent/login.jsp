@@ -9,12 +9,8 @@
 <title>Insert title here</title>
 <style type="text/css">
 #fx{
-		position: absolute;
-		top:5px;
-		right: 5px;
-		width:400px;
+		width:300px;
 		height: 150px;
-		background: lime;
 	}
 	
 </style>
