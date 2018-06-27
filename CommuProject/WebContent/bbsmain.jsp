@@ -28,7 +28,7 @@
 	%>
 		<tr>
 			<td align = "center" width = "10px"><%= dto.getNo() %></td>
-			<td align = "center" width = "300px"><a href = "countUp.jsp?no=<%=dto.getNo() %>"><%= dto.getTitle() %></a></td>
+			<td align = "center" width = "300px"><a href = "bbs/countUp.jsp?no=<%=dto.getNo() %>"><%= dto.getTitle() %></a></td>
 			<td align = "center" width = "100px"><%= dto.getWriter() %></td>
 			<td align = "center" width = "50px"><%= dto.getCount() %></td>
 			<td align = "center" width = "50px"><%= dto.getBlike() %></td>

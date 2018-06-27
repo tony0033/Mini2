@@ -92,11 +92,10 @@ border: 1;
 </div>
 <div id = "content">
 <div id = "login">
-
-<%@include file="login.jsp" %>
-
 </div>
-<div id = "bbs"><img src="img/bbs.jpg" width="800" height="400"></div>
+<div id = "bbs">
+<%@include file="bbsmain.jsp" %>
+</div>
 <div id = "game">
 <table id = "gametable" border="1">
 <tr>
