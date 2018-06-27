@@ -76,10 +76,10 @@ function Alert (msg){
 }
 function doDisplay(){
     var con = document.getElementById("show");
-    if(con.style.display=='none'){
-        con.style.display = 'block';
-    }else{
+    if(con.style.display=='block'){
         con.style.display = 'none';
+    }else{
+        con.style.display = 'block';
     }
 }
 
@@ -92,6 +92,9 @@ display: block;
 margin: auto;
 width: 200px;
 height: 200px;
+}
+p{
+display: none;
 }
 </style>
 </head>
@@ -109,7 +112,7 @@ int num = ran.nextInt(3)+1;
 <button onclick="rock(<%= num %>)">바위</button>
 <button onclick="paper(<%= num %>)">보</button><br>
 <button onclick="doDisplay()">경기 규칙</button>
-<p id = "show" > 한번할때 500포인트씩 사용됩니다<br>
+<p id = "show"> 한번할때 500포인트씩 사용됩니다<br>
 비길경우 전부 돌려받고 이길경우 2배의 포인트를 획득합니다.</p>
 </center>
 </body>

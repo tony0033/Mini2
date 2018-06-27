@@ -29,7 +29,7 @@ String id = request.getParameter("id");
 session.setAttribute("id", id);
 %>
 
-<jsp:forward page="login.jsp"></jsp:forward> 
+<jsp:forward page="main.jsp"></jsp:forward> 
 <%
 
 
