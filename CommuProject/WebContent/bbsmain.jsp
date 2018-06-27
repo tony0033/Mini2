@@ -21,8 +21,8 @@
 		
 	</tr>
 	<%
-		BBSDAO dao = new BBSDAO();
-		ArrayList list = dao.selectAll(0,5);
+		BBSDAO dao1 = new BBSDAO();
+		ArrayList list = dao1.selectAll(0,5);
 		for(int i = 0 ; i < list.size() ; i ++){
 			BBSDTO dto = (BBSDTO)list.get(i);
 	%>

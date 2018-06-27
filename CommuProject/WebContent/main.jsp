@@ -92,6 +92,8 @@ border: 1;
 </div>
 <div id = "content">
 <div id = "login">
+<%@include file="login.jsp" %>
+
 </div>
 <div id = "bbs">
 <%@include file="bbsmain.jsp" %>
