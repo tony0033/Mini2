@@ -113,6 +113,7 @@ border:1px solid red;
 </tr>
 </table></div>
 <div id = "chatting">
+<%@include file="chatting.jsp"%>
 
 </div>
 

@@ -8,7 +8,9 @@
 </head>
 <body>
 <% session.invalidate();%>
-로그아웃 되었습니다.
-<a href=main.html>로그인화면으로</a>
+<script type="text/javascript">
+alert("로그아웃 되었습니다.");
+history.back();
+</script>
 </body>
 </html>
