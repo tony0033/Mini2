@@ -22,7 +22,15 @@
 	</tr>
 	<%
 		BBSDAO dao = new BBSDAO();
-		int pageNum = Integer.parseInt(request.getParameter("pageNum"));
+		int pageNum;
+		if(request.getParameter("pageNum")==null){
+			pageNum =1;
+			}
+		else{
+		 pageNum = Integer.parseInt(request.getParameter("pageNum"));
+		}
+			
+		
 		int start =(pageNum-1)*15;
 		int end =(pageNum*15); 
 		ArrayList list = dao.selectAll(start ,end);

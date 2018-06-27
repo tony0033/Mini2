@@ -7,98 +7,8 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<style type="text/css">
-body {
-	background-image: url("img/back.jpeg");
-	
-}
-
-#total {
-	width: 1100px;
-}
-
-#leftLay {
-	width: 300px;
-	float: left;
-}
-
-
-#logo {
-	width: 300px;
-	height: 150px;
-	padding-left: 50px;
-	padding-top: 30px;
-}
-
-#login {
-	width: 300px;
-	height: 150px;
-	padding-left: 30px;
-	paddint-top:30px;
-}
-
-#game {
-	width: 300px;
-}
-
-#gametable {
-	width: 250px;
-	height: 250px;
-	padding-left: 30px;
-}
-#chatting{
-	width: 300px
-	height: 250px;
-	
-	padding-top:50px;
-}
-
-#rightLay {
-	width: 800px;
-	float: right;
-}
-
-#adver{
-	float: left;
-	width: 700px;
-	height : 150px;
-	padding-left: 50px;
-	padding-top: 30px;
-}
-
-#bbs{
-padding-left:100px;
-padding-top:50px;
-	float:  right;
-	width: 800px;
-	height: 300px;
-	
-}
-
-#picture{
-	width:110px; 
-	height:50px;
-	padding-left:60px; 
-}
-#trade{
-	padding-left: 100px;
-	padding-top:30px;
-	float: right;
-	width: 800px;
-	height: 300px;
-}
-
-button{
-	background-image: url("img/back.jpeg");
-}
-
-textarea{
-	background-image: url("img/back.jpeg");
-}
-
-</style>
+<link rel="stylesheet" type ="text/css" href ="css/main.css"> 
 </head>
-
 <body>
 <table width="<?=$width?>" align="center" cellpadding=0 cellspacing=0 style="margin:0 auto;"><tr><td>
 				<div id="total">
@@ -143,9 +53,5 @@ textarea{
 		</td>
 	</tr>
 </table>
-
-
-
-
 </body>
 </html>
