@@ -6,7 +6,7 @@
 <title>Testing websockets</title>
 <style type="text/css">
 fieldset {
-	width: 290px;
+	width: 230px;
 }
 </style>
 
@@ -19,9 +19,9 @@ if (id==null){
 	id = session.getId().substring(0, 6);
 }
 %>
-	<fieldset>
-		<textarea id="messageWindow" rows="10" cols="25" readonly="readonly"></textarea>
-		<br /> <input id="inputMessage" type="text" /> <input type="submit"
+	<fieldset align = "center">
+		<textarea id="messageWindow" rows="10" cols="28" readonly="readonly" ></textarea>
+		<br> <input id="inputMessage" type="text" /> <input type="submit"
 			value="send" onclick="send()" />
 	</fieldset>
 	<script type="text/javascript">

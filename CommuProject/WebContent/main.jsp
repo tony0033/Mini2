@@ -8,123 +8,141 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <style type="text/css">
-*{
-}
-#total{
-	
-	width: 1200px;
-	
-	border:1px solid red;
-}
-#top {
-	width: 1200px;
-	height: 100px;
-	background-color: white;
-	border:1px solid red;
-}
-#adver{
-float: left;
-	padding-left: 100px;
-	width: 750px;
-border:1px solid red;
-}
-#logo{
-float:  left;
-	padding-left:50px;
-	width:200px;
-	border:1px solid red;
-}
-
-#content{
-padding-top:150px;
-	width:1200px;
-border:1px solid red;
-}
-#login{
-
-width:290px;
-float:  left;
-border:1px solid red;
-padding-bottom: 100px;
-}
-#bbs{
-border:1px solid red;
-padding-left:100px;
-float:  right;
-	width: 800px;
-	height: 400px;
+body {
+	background-image: url("img/back.jpeg");
 	
 }
-#trade{
-border:1px solid red;
-	padding-left: 100px;
-	float: right;
-	width: 800px;
-	height: 400px;
 
+#total {
+	width: 1100px;
 }
-#bottom{
-width:1200px;
-float:right;
-border:1px solid red;
-background-color: blue;
-height: 200px;
-}
-#game{
-width:290px;
-float: left;
-border:1px solid red;
-}
-#gametable{
 
-width: 300px;
-height: 300px;
-border: 1;
+#leftLay {
+	width: 300px;
+	float: left;
+}
 
+
+#logo {
+	width: 300px;
+	height: 150px;
+	padding-left: 50px;
+	padding-top: 30px;
+}
+
+#login {
+	width: 300px;
+	height: 150px;
+	padding-left: 30px;
+	paddint-top:30px;
+}
+
+#game {
+	width: 300px;
+}
+
+#gametable {
+	width: 250px;
+	height: 250px;
+	padding-left: 30px;
 }
 #chatting{
-width:290px;
-float: left;
-border:1px solid red;
+	width: 300px
+	height: 250px;
+	
+	padding-top:50px;
 }
+
+#rightLay {
+	width: 800px;
+	float: right;
+}
+
+#adver{
+	float: left;
+	width: 700px;
+	height : 150px;
+	padding-left: 50px;
+	padding-top: 30px;
+}
+
+#bbs{
+padding-left:100px;
+padding-top:50px;
+	float:  right;
+	width: 800px;
+	height: 300px;
+	
+}
+
+#picture{
+	width:110px; 
+	height:50px;
+	padding-left:60px; 
+}
+#trade{
+	padding-left: 100px;
+	padding-top:30px;
+	float: right;
+	width: 800px;
+	height: 300px;
+}
+
+button{
+	background-image: url("img/back.jpeg");
+}
+
+textarea{
+	background-image: url("img/back.jpeg");
+}
+
 </style>
 </head>
+
 <body>
-<div id = "total">
-<div id = "top">
-<div id = "logo"><img src=img/23.jpeg width="200" height="100"></div>
-<div id = "adver"><img src=img/adver.jpg width="750" height="100"></div>
-</div>
-<div id = "content">
-<div id = "login">
-<%@include file="login.jsp" %>
+<table width="<?=$width?>" align="center" cellpadding=0 cellspacing=0 style="margin:0 auto;"><tr><td>
+				<div id="total">
+					<div id="leftLay">
+						<div id="logo">
+							<img src=img/23.jpeg width="150" height="100">
+						</div>
 
-</div>
-<div id = "bbs">
-<%@include file="bbsmain.jsp"%>
-</div>
-<div id = "game">
-<table id = "gametable" border="1">
-<tr>
-<td align="center" height="20px">포인트게임</td>
-</tr>
-<tr>
-<td align="center" valign="top"><a href="Rock.jsp">가위바위보</a></td>
-</tr>
-</table></div>
-<div id = "chatting">
-<%@include file="chatting.jsp"%>
+						<div id="login">
+							<%@include file="login.jsp"%>
+						</div>
+						<div id="game">
+							<table id="gametable" border="1">
+								<tr>
+									<td align="center" height="20px">포인트게임</td>
+								</tr>
+								<tr>
+									<td align="center" valign="top"><a href="Rock.jsp">가위바위보</a></td>
+								</tr>
+							</table>
+						</div>
+						<div id="chatting">
+							<%@include file="chatting.jsp"%>
+						</div>
+					</div>
+					<div id="rightLay">
+						<div id="adver">
+							<img src=img/adver.jpg width="700" height="100">
+						</div>
+						<div id="bbs">
+							<a href = "bbs/bbsPage.jsp"><img src =img/bbs.png id = "picture"></a>
+							<%@include file="bbsmain.jsp"%>
+						</div>
+						<div id="trade">
+							<a href = "trade/tradePage.jsp"><img src =img/trade.png id = "picture"></a>
+							<%@include file="trademain.jsp"%>
+						</div>
+					</div>
+				</div>
 
-</div>
-
-<div id = "trade">
-<%@include file="trademain.jsp"%>
- </div>
-</div>
-
-<div id = bottom> </div>
-</div>
-
+				<div id=bottom></div>
+		</td>
+	</tr>
+</table>
 
 
 

@@ -18,6 +18,7 @@
 		<td align = "center" width = "100px">작성자</td>
 		<td align = "center" width = "50px">조회수</td>
 		<td align = "center" width = "50px">추천수</td>
+		<td align = "center" width = "100px">날 짜</td>
 		
 	</tr>
 	<%
@@ -32,12 +33,13 @@
 			<td align = "center" width = "100px"><%= dto.getWriter() %></td>
 			<td align = "center" width = "50px"><%= dto.getCount() %></td>
 			<td align = "center" width = "50px"><%= dto.getBlike() %></td>
+			<td align = "center" width = "100px"><%= dto.getDate() %></td>
 		</tr>	
 	<%
 		}
 	%>
 </table>
-<table width = "530px">
+<table width = "630px">
 	<tr>
 		<td align = "right">
 			<button type = "button" onclick = "location.href = 'newBBS.jsp'">작성</button>
