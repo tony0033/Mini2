@@ -6,6 +6,7 @@ public class TradeDTO {
 	private String price;
 	private String writer;
 	private int count;
+	private int status;
 	
 	
 	public int getNo() {
@@ -38,6 +39,13 @@ public class TradeDTO {
 	public void setCount(int count) {
 		this.count = count;
 	}
+	public int getStatus() {
+		return status;
+	}
+	public void setStatus(int status) {
+		this.status = status;
+	}
+	
 	
 	
 }

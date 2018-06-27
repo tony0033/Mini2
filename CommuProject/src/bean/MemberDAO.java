@@ -55,6 +55,21 @@ public class MemberDAO {
 		pool.freeConnection(con, ps);
 	}
 	
+	public void updatePay(MemberDTO dto) throws Exception {
+		con = pool.getConnection();
+		
+		String sql = "update member set pay = ? where id = ?";
+		
+		ps = con.prepareStatement(sql);
+		
+		ps.setString(1, dto.getPay());
+		ps.setString(2, dto.getId());
+		
+		ps.executeUpdate();
+		
+		pool.freeConnection(con, ps);
+	}
+	
 	public void delete(String id) throws Exception {
 		con = pool.getConnection();
 		
