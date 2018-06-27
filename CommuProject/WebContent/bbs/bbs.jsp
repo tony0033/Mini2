@@ -58,7 +58,7 @@
 					}
 				%>
 				<button type = "button" onclick = "location.href = 'likeUp.jsp?no=<%= dto.getNo()%>';info();">추천하기</button>
-				<button type = "button" onclick = "location.href = 'bbsList.jsp'">돌아가기</button>
+				<button type = "button" onclick = "location.href = '../main.jsp'">돌아가기</button>
 			</td>
 		</tr>
 	</table>

@@ -14,8 +14,10 @@
 	
 	width: 1200px;
 	
-	border:1px solid red;
+	/* border:1px solid red; */
 }
+
+
 #top {
 	width: 1200px;
 	height: 100px;
@@ -26,13 +28,13 @@
 float: left;
 	padding-left: 100px;
 	width: 750px;
-border:1px solid red;
+/* border:1px solid red; */
 }
 #logo{
 float:  left;
-	padding-left:50px;
-	width:200px;
-	border:1px solid red;
+	/* padding-left:50px; */
+	width:250px;
+	/* border:1px solid red; */
 }
 
 #content{
@@ -86,10 +88,8 @@ border: 1;
 </head>
 <body>
 <div id = "total">
-<div id = "top">
-<div id = "logo"><img src=img/23.jpeg width="200" height="100"></div>
-<div id = "adver"><img src=img/adver.jpg width="750" height="100"></div>
-</div>
+<div id = "logo"><img src=img/23.jpeg width="250" height="150"></div>
+<div id = "adver"><img src=img/adver.jpg width="800" height="150"></div>
 <div id = "content">
 <div id = "login">
 <%@include file="login.jsp" %>
