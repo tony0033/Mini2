@@ -1,3 +1,4 @@
+<%@page import="bean.MemberDAO"%>
 <%@page import="bean.BBSDAO"%>
 <%@page import="bean.BBSDTO"%>
 <%@page import="java.util.Date"%>
@@ -27,7 +28,9 @@
 		dto.setDate(date);
 		BBSDAO dao = new BBSDAO();
 		dao.insert(dto);
-	%>
+		MemberDAO daoi = new MemberDAO();
+		daoi.updatefree(writer, 30);
+		%>
 	
 	<script type="text/javascript">
 		confirm("작성완료");

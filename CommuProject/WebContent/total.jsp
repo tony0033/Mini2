@@ -13,8 +13,8 @@
 		<tr>
 			<td>
 				<div id="total">
-					<%@ include file="top.jsp"%>
-					<%@ include file="left.jsp"%>
+					<%@ include file="/top.jsp"%>
+					<%@ include file="/left.jsp"%>
 					<div id="rightLay">
 					
 					</div>

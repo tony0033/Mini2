@@ -25,13 +25,13 @@ function rock(ran){
 	$("#roll").attr("src","img/roll"+ran+".jpg");
 	
 	if(ran == 1){
-	Alert('<img src = "img/roll1.jpg"> 비겼습니다');
+	Alert('<img src = "img/roll1.jpg"> 비겼습니다(+0p)');
 	}
 	else if (ran == 2){
-		Alert('<img src = "img/roll2.jpg"> 졌습니다');
+		Alert('<img src = "img/roll2.jpg"> 졌습니다.(-500p)');
 	}
 	else {
-		Alert('<img src = "img/roll3.jpg"> 이겼습니다');
+		Alert('<img src = "img/roll3.jpg"> 이겼습니다!!(+500p)');
 	}
 	location.reload();
 }
@@ -40,13 +40,13 @@ function scissors(ran){
 	clearInterval(playroll);
 	
 	if(ran == 1){
-	Alert('<img src = "img/roll1.jpg"> 졌습니다');
+	Alert('<img src = "img/roll1.jpg"> 졌습니다.(-500p)');
 	}
 	else if (ran == 2){
-		Alert('<img src = "img/roll2.jpg"> 이겼습니다');
+		Alert('<img src = "img/roll2.jpg"> 이겼습니다!!(+500p)');
 	}
 	else {
-		Alert('<img src = "img/roll3.jpg"> 비겼습니다');
+		Alert('<img src = "img/roll3.jpg"> 비겼습니다(+0p)');
 	}
 	location.reload();
 }
@@ -55,13 +55,13 @@ function paper(ran){
 	clearInterval(playroll);
 	
 	if(ran == 1){
-	Alert('<img src = "img/roll1.jpg"> 이겼습니다');
+	Alert('<img src = "img/roll1.jpg"> 이겼습니다!!(+500p)');
 	}
 	else if (ran == 2){
-		Alert('<img src = "img/roll2.jpg"> 비겼습니다');
+		Alert('<img src = "img/roll2.jpg"> 비겼습니다(+0p)');
 	}
 	else {
-		Alert('<img src = "img/roll3.jpg"> 졌습니다');
+		Alert('<img src = "img/roll3.jpg"> 졌습니다.(-500p)');
 	}
 	location.reload();
 }
@@ -84,6 +84,7 @@ function doDisplay(){
 }
 
 
+
 </script>
 <style type="text/css">
 img{
@@ -96,6 +97,9 @@ height: 200px;
 p{
 display: none;
 }
+*{
+
+}
 </style>
 </head>
 
@@ -105,6 +109,7 @@ int num = ran.nextInt(3)+1;
 
 %>
 <center>
+<h3>가위바위보</h3>
 <img src = "img/roll1.jpg" id="roll">
 
 <button onclick="scissors(<%= num %>)">가위</button>

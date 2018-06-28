@@ -20,7 +20,7 @@
 					<td align="center" height="20px">포인트게임</td>
 				</tr>
 				<tr>
-					<td align="center" valign="top"><a href="Rock.jsp">가위바위보</a></td>
+					<td align="center" valign="top"><button onclick='window.open("Rock.jsp","","width=400,height=400")'>가위바위보</button></td>
 				</tr>
 			</table>
 		</div>

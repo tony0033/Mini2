@@ -17,7 +17,7 @@
 					<%@ include file="top.jsp"%>
 					<center>
 						<h2>회원가입</h2>
-						<form action="join.jsp" method="post">
+						<form action="join2.jsp" method="post">
 							<table>
 								<tr>
 									<td>아이디: <input type="text" name="id">
