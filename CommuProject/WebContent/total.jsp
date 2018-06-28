@@ -6,7 +6,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 </head>
-<link rel="stylesheet" type ="text/css" href ="css/main.css"> 
+<link rel="stylesheet" type ="text/css" href ="/CommuProject/css/main.css"> 
 <body>
 	<table width="<?=$width?>" align="center" cellpadding=0 cellspacing=0
 		style="margin: 0 auto;">

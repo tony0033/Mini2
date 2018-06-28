@@ -36,6 +36,6 @@
 		confirm("작성완료");
 	</script>
 	
-	<jsp:forward page="bbsList.jsp"></jsp:forward>
+	<jsp:forward page="bbsPage.jsp?"></jsp:forward>
 </body>
 </html>

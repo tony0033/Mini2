@@ -17,7 +17,7 @@
 	%>
 	<script type="text/javascript">
 		alert("삭제 되었습니다.");
-		location.replace("bbsList.jsp");
+		location.replace("bbsPage.jsp");
 	</script>
 	
 </body>

@@ -7,10 +7,25 @@
 <title>Insert title here</title>
 </head>
 <body>
-<% session.invalidate();%>
-<script type="text/javascript">
-alert("로그아웃 되었습니다.");
-location.href="http://localhost:8888/CommuProject/main.jsp"
-</script>
+<%
+	String id = (String)session.getAttribute("id");
+
+	if(id==null){
+%>
+		<script type="text/javascript">
+			alert("로그인을 해주십시오!");
+			history.back();
+		</script>		
+<% 
+	}else{
+%>
+		<script type="text/javascript">
+			location.href = "newTrade.jsp";
+		</script>
+<%		
+	}
+	
+%>
+
 </body>
 </html>

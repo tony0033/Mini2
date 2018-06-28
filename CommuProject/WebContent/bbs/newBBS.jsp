@@ -5,37 +5,17 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
-<link rel="stylesheet" type ="text/css" href ="css/main.css"> 
 </head>
+<link rel="stylesheet" type ="text/css" href ="../css/main.css"> 
 <body>
-<table width="<?=$width?>" align="center" cellpadding=0 cellspacing=0 style="margin:0 auto;"><tr><td>
+	<table width="<?=$width?>" align="center" cellpadding=0 cellspacing=0
+		style="margin: 0 auto;">
+		<tr>
+			<td>
 				<div id="total">
-					<div id="leftLay">
-						<div id="logo">
-							<img src=img/23.jpeg width="150" height="100">
-						</div>
-
-						<div id="login">
-							<%@include file="login.jsp"%>
-						</div>
-						<div id="game">
-							<table id="gametable" border="1">
-								<tr>
-									<td align="center" height="20px">포인트게임</td>
-								</tr>
-								<tr>
-									<td align="center" valign="top"><a href="Rock.jsp">가위바위보</a></td>
-								</tr>
-							</table>
-						</div>
-						<div id="chatting">
-							<%@include file="chatting.jsp"%>
-						</div>
-					</div>
+					<%@ include file="../top.jsp"%>
+					<%@ include file="../left.jsp"%>
 					<div id="rightLay">
-						<div id="adver">
-							<img src=img/adver.jpg width="700" height="100">
-						</div>
 						<div id="bbs">
 							<body>
 								<center>
@@ -47,14 +27,14 @@
 											</tr>
 											<tr>
 												<td width="50px" align="center">내용</td>
-												<td width="150px"><textarea rows="10" cols="22"></textarea>
+												<td width="150px"><textarea rows="10" cols="22" name = "content"></textarea>
 												</td>
 											</tr>
 										</table>
 										<table>
 											<tr>
 												<td align="right" width="200px"><input type="submit"value="작성">
-													<button type="button" onclick="location.href = '../main.jsp'">돌아가기</button>
+													<button type="button" onclick="location.href = 'bbsPage.jsp'">돌아가기</button>
 												</td>
 											</tr>
 										</table>
@@ -62,12 +42,14 @@
 								</center>
 							</body>
 						</div>
+						
 					</div>
 				</div>
-
-				<div id=bottom></div>
-		</td>
-	</tr>
-</table>
+				
+			</td>
+		</tr>
+	</table>
 </body>
 </html>
+
+
