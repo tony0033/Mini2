@@ -22,7 +22,7 @@
 		if (session.getAttribute("id") == null) {
 	%>
 	<div id="fx">
-		<form action="http://localhost:8888/CommuProject/login2.jsp">
+		<form action="/CommuProject/login2.jsp">
 
 			<table>
 				<tr>
@@ -39,11 +39,11 @@
 
 		<table>
 			<tr>
-				<td><a href=join.html target="_blank">회원가입</a></td>
-				<td><a href="SearchPW.jsp">비밀번호 찾기</a></td>
+				<td><a href=/CommuProject/join.jsp target="_blank">회원가입</a></td>
+				<td><a href="/CommuProject/SearchPw.jsp">비밀번호 찾기</a></td>
 			</tr>
 		</table>
-	</div>
+		</div>
 
 	<%
 		} else {

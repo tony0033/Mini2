@@ -8,7 +8,7 @@
 </head>
 <body>
 
-<form action="SearchPwExe.jsp">
+<form action="/CommuProject/SearchPwExe.jsp">
 아이디를 입력하세요. <input type = "text" name="id"><br>
 이름을 입력하세요. <input type = "text" name="name">
 

@@ -14,7 +14,7 @@
 	MemberDAO dao = new MemberDAO();
 	MemberDTO dto = dao.select(id);
 %>
-<form action="Memberupdate.jsp">
+<form action="/CommuProject/Memberupdate.jsp">
 	<table>
 	<tr>
 		<td class="t1">아이디</td>

@@ -12,10 +12,10 @@
 <body>
 	<div id="top">
 		<div id="logo">
-			<img src=img/23.jpeg width="150" height="100">
+			<a href="/CommuProject/main.jsp"><img src=img/23.jpeg width="150" height="100"></a>
 		</div>
 		<div id="adver">
-			<img src=img/adver.jpg width="700" height="100">
+			<img src="https://nv.veta.naver.com/fxshow?su=SU10079&calp=1&nrefreshx=1" width="700" height="100">
 		</div>
 	</div>
 </body>

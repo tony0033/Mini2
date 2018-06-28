@@ -15,9 +15,11 @@
 			<td>
 				<div id="total">
 					<%@ include file="top.jsp"%>
-					<center>
-						<h2>회원가입</h2>
+					<div id = "rightray">
 						<form action="join2.jsp" method="post">
+						<center>
+						<br>
+						<h2>회원가입</h2>
 							<table>
 								<tr>
 									<td>아이디: <input type="text" name="id">
@@ -35,8 +37,11 @@
 									<td><input type="submit" value="회원가입"></td>
 								</tr>
 								</table>
-								</form>
 								</center>
+								</form>
+								
+								</div>
+								
 	</div>
 	
 			</td>

@@ -24,7 +24,7 @@ else {
 	%>
 	<script type="text/javascript">
 	alert("일치하는 정보가 없습니다..");
-	window.location.href="SearchPw.jsp";
+	window.location.href="/CommuProject/SearchPw.jsp";
 	</script>
 	
 	<%
