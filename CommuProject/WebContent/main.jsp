@@ -25,7 +25,7 @@
 								<tr>
 									<td align="center" height="20px">포인트게임</td>
 								</tr>
-								<tr>
+		 						<tr>
 									<td align="center" valign="top"><a href="Rock.jsp">가위바위보</a></td>
 								</tr>
 							</table>
