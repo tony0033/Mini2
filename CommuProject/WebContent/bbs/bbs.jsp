@@ -55,6 +55,7 @@
 									<tr>
 										<td align="right" width="350px">
 											<%
+												if(session.getAttribute("id") != null){
 												String pid = (String) session.getAttribute("id");
 												if (pid.equals(dtoB.getWriter())) {
 											%>
@@ -62,6 +63,7 @@
 												onclick="location.href ='changeBBS.jsp?no=<%=dtoB.getNo()%>'">수정</button>
 											<button type="button" onclick=check();>제거</button> <%
  	} else if (pid.equals("")) {
+ 		}
  	}
  %>
 											<button type="button"

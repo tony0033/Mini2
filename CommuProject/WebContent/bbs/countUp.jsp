@@ -18,6 +18,8 @@
 		dao.updateCount(dto);
 	%>
 	
-	<jsp:forward page="bbs.jsp?no=<%=no %>"></jsp:forward>
+	<jsp:forward page="bbs.jsp">
+	<jsp:param value="<%=no %>" name="no"/>
+	</jsp:forward>
 </body>
 </html>
