@@ -26,10 +26,12 @@
 		String pay1 = String.valueOf(pay);
 		dto1.setPay(pay1);
 		dao1.updatePay(dto1);
+		
+		dao.updateStatus(dto);
 	%>
 	<script type="text/javascript">
 		alert("돈을 받았습니다.");
-		location.replace("deleteTrade.jsp?no=<%=dto.getNo()%>");
+		location.replace("trade.jsp?no=<%=dto.getNo()%>");
 	</script>
 </body>
 </html>

@@ -1,5 +1,5 @@
-<%@page import="bean.TradeDTO"%>
 <%@page import="java.util.ArrayList"%>
+<%@page import="bean.TradeDTO"%>
 <%@page import="bean.TradeDAO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
@@ -19,9 +19,8 @@
 					<%@ include file="/top.jsp"%>
 					<%@ include file="/left.jsp"%>
 					<div id="rightLay">
-
-						<div id="bbs">
-							<center>
+						<div id = "bbs">
+						<center>
 							<table border="1">
 								<tr>
 									<td align="center" width="10px">no</td>
@@ -30,7 +29,8 @@
 									<td align="center" width="100px">작성자</td>
 									<td align="center" width="50px">조회수</td>
 								</tr>
-								<%
+								<%	
+									String writer = (String)session.getAttribute("id");
 									TradeDAO dao3 = new TradeDAO();
 									int pageNum;
 									if (request.getParameter("pageNum") == null) {
@@ -40,7 +40,7 @@
 									}
 									int start = (pageNum - 1) * 15;
 									int end = pageNum * 15;
-									ArrayList list = dao3.selectAll(start, end);
+									ArrayList list = dao3.select(writer);
 									for (int i = 0; i < list.size(); i++) {
 										TradeDTO dto = (TradeDTO) list.get(i);
 								%>
@@ -79,12 +79,12 @@
 									</td>
 								</tr>
 								</center>
-								</div>
+						</div>
 					</div>
+				</div>
 				
 			</td>
 		</tr>
 	</table>
 </body>
 </html>
-

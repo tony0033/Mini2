@@ -40,6 +40,7 @@
 	<tr>
 		<td align = "right">
 			<button type = "button" onclick = "location.href = 'trade/idCheck.jsp'">등록</button>
+			<button type = "button" onclick = "location.href = 'trade/idCheck1.jsp'">내 목록</button>
 		</td>
 	</tr>
 </table>

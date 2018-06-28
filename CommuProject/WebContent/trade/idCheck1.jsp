@@ -11,29 +11,27 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<%
-		String id = (String)session.getAttribute("id");
+<%
+	String id = (String)session.getAttribute("id");
+
+	if(id==null){
+%>
+		<script type="text/javascript">
+			alert("로그인을 해주십시오!");
+			history.back();
+		</script>		
+<% 
+	}else{
 		MemberDAO dao = new MemberDAO();
 		MemberDTO dto = dao.select(id);
-
-		int no = Integer.parseInt(request.getParameter("no"));
-		TradeDAO dao1 = new TradeDAO();
-		TradeDTO dto1 = dao1.select(no);
-		
-		int pay = Integer.parseInt(dto.getPay());
-		int price = Integer.parseInt(dto1.getPrice());
-		
-		pay = pay - price;
-		String pay1 = String.valueOf(pay);
-		dto.setPay(pay1);
-		dao.updatePay(dto);
-		
-		dao1.updateStatus(dto1);
-	%>
+%>
+		<script type="text/javascript">
+			location.href = "myTrade.jsp";
+		</script>
+<%		
+	}
 	
-	<script type="text/javascript">
-		alert("구입하였습니다!");
-		location.replace("trade.jsp?no=<%=no%>");
-	</script>
+%>
+
 </body>
 </html>

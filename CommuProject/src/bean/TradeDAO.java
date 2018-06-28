@@ -70,8 +70,7 @@ public class TradeDAO {
 		String sql = "update trade set status = ? where no = ?";
 		
 		ps = con.prepareStatement(sql);
-		
-		dto.setStatus(1);
+		dto.setStatus(dto.getStatus()+1);
 		
 		ps.setInt(1, dto.getStatus());
 		ps.setInt(2, dto.getNo());
@@ -120,6 +119,35 @@ public class TradeDAO {
 		pool.freeConnection(con, ps);
 		
 		return dto;
+	}
+	public ArrayList select(String writer) throws Exception {
+		con = pool.getConnection();
+		
+		String sql = "select * from Trade where writer = ?";
+		
+		ps = con.prepareStatement(sql);
+		
+		ps.setString(1, writer);
+		
+		rs = ps.executeQuery();
+		
+		ArrayList list = new ArrayList();
+		while(rs.next()) {
+			TradeDTO dto = new TradeDTO();
+			
+			dto.setNo(rs.getInt(1));
+			dto.setName(rs.getString(2));
+			dto.setPrice(rs.getString(3));
+			dto.setWriter(rs.getString(4));
+			dto.setCount(rs.getInt(5));
+			dto.setStatus(rs.getInt(6));
+		
+			list.add(dto);
+		}
+		
+		pool.freeConnection(con, ps);
+		
+		return list;
 	}
 	
 	public ArrayList selectAll() throws Exception {

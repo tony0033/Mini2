@@ -12,8 +12,7 @@
 </head>
 <body>
 	<%
-		String id = "a";
-		//String id = (String)session.getAttribute("id");
+		String id = (String)session.getAttribute("id");
 		MemberDAO dao = new MemberDAO();
 		MemberDTO dto = dao.select(id);
 		
