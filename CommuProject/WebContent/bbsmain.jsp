@@ -42,7 +42,7 @@
 <table width = "630px">
 	<tr>
 		<td align = "right">
-			<button type = "button" onclick = "location.href = 'bbs/newBBS.jsp'">작성</button>
+			<button type = "button" onclick = "location.href = 'bbs/idCheck.jsp'">작성</button>
 		</td>
 	</tr>
 </table>
