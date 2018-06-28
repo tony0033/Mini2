@@ -22,7 +22,7 @@
 		if (session.getAttribute("id") == null) {
 	%>
 	<div id="fx">
-		<form action="login2.jsp">
+		<form action="http://localhost:8888/CommuProject/login2.jsp">
 
 			<table>
 				<tr>
@@ -47,7 +47,7 @@
 
 	<%
 		} else {
-			String id1 = request.getParameter("id");
+			String id1 = (String)session.getAttribute("id");
 			MemberDTO dto = dao.select(id1);
 	%>
 
@@ -55,7 +55,7 @@
 	<br> 유료포인트:<%=dto.getPay()%><br> 기본포인트:<%=dto.getFree()%><br>
 	경험치:<%=dto.getExp()%><br>
 
-	<a href="logout.jsp">로그아웃</a>
+	<a href="http://localhost:8888/CommuProject/logout.jsp">로그아웃</a>
 
 	<a href="MemberInfo.jsp?id=<%=dto.getId()%>">개인정보변경</a>
 

@@ -37,7 +37,7 @@
 	%>
 	<center>
 		<div id="fx">
-			<form action="login2.jsp">
+			<form action="http://localhost:8888/CommuProject/login2.jsp">
 
 				<table>
 					<tr>
