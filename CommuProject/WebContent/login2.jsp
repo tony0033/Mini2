@@ -2,7 +2,7 @@
 <%@page import="bean.MemberDTO"%>
 <%@page import="bean.MemberDAO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8" errorPage="iderror.jsp"%>
+	pageEncoding="UTF-8" errorPage="iderror.jsp"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -12,72 +12,71 @@
 </head>
 <body>
 
-<%
+	<%
+		String id1 = request.getParameter("id");
+		String pw = request.getParameter("pw");
+		MemberDAO dao = new MemberDAO();
+		MemberDTO dto = dao.select(id1);
 
+		if (pw.equals(dto.getPw())) {
 
-String id1 = request.getParameter("id");
-String pw = request.getParameter("pw");
-MemberDAO dao =new MemberDAO();
-MemberDTO dto =dao.select(id1); 
-		
-		
+			String id = request.getParameter("id");
+			session.setAttribute("id", id);
+	%>
 
-	if(pw.equals(dto.getPw())){
-
-
-String id = request.getParameter("id");
-session.setAttribute("id", id);
-%>
-
-<jsp:forward page="main2.jsp"></jsp:forward> 
-<%
-
-
-}else{
-	if(!id1.equals("admin")){
-		%>
-		<script type="text/javascript">
+	<jsp:forward page="main2.jsp"></jsp:forward>
+	<%
+		} else {
+			if (!id1.equals("admin")) {
+	%>
+	<script type="text/javascript">
 		alert("비밀번호가 다릅니다.");
-		</script>
-		<%
-	}
-		
-%>
-		<center>
-	<div id="fx">
-	<form action="login2.jsp">
-	
-<table>
-<tr>
-<td> <input type="text" name="id" value = "아이디" onfocus = "this.value = ''" > </td>
-<td rowspan="2"><input type="submit" value="로그인"></td>
-</tr>
-<tr>
-<td> <input type="text" name="pw" value = "비밀번호" onfocus="this.type='password',this.value=''" > </td>
-</tr>
-</table>
-</form>
+	</script>
+	<%
+		}
+	%><table width="<?=$width?>" align="center" cellpadding=0 cellspacing=0
+		style="margin: 0 auto;">
+		<tr>
+			<td>
+				<div id="total">
+					<%@ include file="top.jsp"%>
+					<center>
+						<div id="fx">
+							<form action="login2.jsp">
 
-<br><br>
+								<table>
+									<tr>
+										<td><input type="text" name="id" value="아이디"
+											onfocus="this.value = ''"></td>
+										<td rowspan="2"><input type="submit" value="로그인"></td>
+									</tr>
+									<tr>
+										<td><input type="text" name="pw" value="비밀번호"
+											onfocus="this.type='password',this.value=''"></td>
+									</tr>
+								</table>
+							</form>
 
-<table border="1">
-<tr>
-<td><a href ="join.jsp">회원가입</a></td>  
-<td><a href = "SearchPw.jsp">비밀번호 찾기</a></td>
-</tr>
-</table>
+							<br>
+							<br>
 
+							<table border="1">
+								<tr>
+									<td><a href="join.jsp">회원가입</a></td>
+									<td><a href="SearchPw.jsp">비밀번호 찾기</a></td>
+								</tr>
+							</table>
 
+						</div>
+				</div>
 
-</div>
-<% } 
+			</td>
+		</tr>
+	</table>
 
-
-	
-	
-	
-
-%>
-</center>
+	<%
+		}
+	%>
+	</center>
 </body>
 </html>

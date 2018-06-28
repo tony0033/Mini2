@@ -8,16 +8,41 @@
 <title>Insert title here</title>
 </head>
 <body>
-<jsp:useBean id="dto" class="bean.MemberDTO">
-	<jsp:setProperty name="dto" property="*" />
-</jsp:useBean>
-<%
-	request.setCharacterEncoding("utf-8");
-	 MemberDAO dao = new MemberDAO();
-	dao.insert(dto);
-%>
-회원가입이 되었습니다.
-
-<a href="main.jsp">메인으로</a>
+<body>
+	<table width="<?=$width?>" align="center" cellpadding=0 cellspacing=0
+		style="margin: 0 auto;">
+		<tr>
+			<td>
+				<div id="total">
+					<%@ include file="top.jsp"%>
+					<center>
+						<h2>회원가입</h2>
+						<form action="join.jsp" method="post">
+							<table>
+								<tr>
+									<td>아이디: <input type="text" name="id">
+									</td>
+								</tr>
+								<tr>
+									<td>비밀번호: <input type="text" name="pw">
+									</td>
+								</tr>
+								<tr>
+									<td>이름: <input type="text" name="name">
+									</td>
+								</tr>
+								<tr>
+									<td><input type="submit" value="회원가입"></td>
+								</tr>
+								</table>
+								</form>
+								</center>
+	</div>
+	
+			</td>
+		</tr>
+	</table>
+	
+	
 </body>
 </html>

@@ -6,6 +6,9 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 </head>
+<script type="text/javascript">
+var s;
+</script>
 <link rel="stylesheet" type ="text/css" href ="css/main.css"> 
 <body>
 	<table width="<?=$width?>" align="center" cellpadding=0 cellspacing=0
@@ -13,16 +16,17 @@
 		<tr>
 			<td>
 				<div id="total">
-					<%@ include file="top.jsp"%>
-					<%@ include file="left.jsp"%>
+					<jsp:include page="top.jsp"/>
+					<jsp:include page="left.jsp"/>
+					
 					<div id="rightLay">
 						<div id="bbs">
 							<a href = "bbs/bbsPage.jsp"><img src =img/bbs.png id = "picture"></a>
-							<%@include file="bbsmain.jsp"%>
+							<jsp:include page="bbsmain.jsp"/>
 						</div>
 						<div id="trade">
 							<a href = "trade/tradePage.jsp"><img src =img/trade.png id = "picture"></a>
-							<%@include file="trademain.jsp"%>
+							<jsp:include page="trademain.jsp"/>
 						</div>
 					</div>
 				</div>

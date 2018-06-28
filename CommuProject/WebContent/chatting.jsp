@@ -21,8 +21,8 @@ if (id==null){
 %>
 	<fieldset align = "center">
 		<textarea id="messageWindow" rows="10" cols="28" readonly="readonly" ></textarea>
-		<br> <input id="inputMessage" type="text" /> <input type="submit"
-			value="send" onclick="send()" />
+		<br> <input id="inputMessage" type="text" /> 
+		<input type="submit" value="send" onclick="send()" />
 	</fieldset>
 	<script type="text/javascript">
     </script>
