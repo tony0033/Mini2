@@ -8,7 +8,12 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
-<link rel="stylesheet" type ="text/css" href ="../css/main.css"> 
+<link rel="stylesheet" type ="text/css" href ="../css/main.css">
+<style type="text/css">
+#bbs1{
+
+}
+</style>
 </head>
 <body>
 <center>
@@ -44,9 +49,11 @@
 								<img src=../img/adver.jpg width="700" height="100">
 							</div>
 							<div id="bbs">
+								<body>
+								<center>
 								<table border="1">
 									<tr>
-										<td align = "center" width = "10px">no</td>
+										<td align ="center" width = "10px">no</td>
 										<td align="center" width="300px">제목</td>
 										<td align="center" width="100px">작성자</td>
 										<td align="center" width="50px">조회수</td>
@@ -95,16 +102,19 @@
 													tot++;
 												}
 												for (int i = 0; i < tot; i++) {
-											%> <a href="bbsPage.jsp?pageNum=<%=i + 1%>">[<%=(i + 1)%>]
-										</a> <%
- 	}
- %>
+											%> 
+											<a href="bbsPage.jsp?pageNum=<%=i + 1%>">[<%=(i + 1)%>]</a>
+											<%
+ 												}
+ 											%>
 										</td>
 										<td align="right">
 											<button type="button" onclick="location.href = 'newBBS.jsp'">작성</button>
 										</td>
 									</tr>
 								</table>
+								</center>
+								</body>
 							</div>
 						</div>
 					</div>

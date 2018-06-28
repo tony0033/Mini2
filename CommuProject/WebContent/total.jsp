@@ -16,14 +16,7 @@
 					<%@ include file="top.jsp"%>
 					<%@ include file="left.jsp"%>
 					<div id="rightLay">
-						<div id="bbs">
-							<a href = "bbs/bbsPage.jsp"><img src =img/bbs.png id = "picture"></a>
-							<%@include file="bbsmain.jsp"%>
-						</div>
-						<div id="trade">
-							<a href = "trade/tradePage.jsp"><img src =img/trade.png id = "picture"></a>
-							<%@include file="trademain.jsp"%>
-						</div>
+					
 					</div>
 				</div>
 				
