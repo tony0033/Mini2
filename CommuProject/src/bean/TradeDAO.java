@@ -70,8 +70,7 @@ public class TradeDAO {
 		String sql = "update trade set status = ? where no = ?";
 		
 		ps = con.prepareStatement(sql);
-		
-		dto.setStatus(1);
+		dto.setStatus(dto.getStatus()+1);
 		
 		ps.setInt(1, dto.getStatus());
 		ps.setInt(2, dto.getNo());

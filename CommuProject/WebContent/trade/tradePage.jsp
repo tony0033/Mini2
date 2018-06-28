@@ -47,7 +47,7 @@
 								<tr>
 									<td align="center" width="10px"><%=dto.getNo()%></td>
 									<td align="center" width="225px"><a
-										href="trade/tCountUp.jsp?no=<%=dto.getNo()%>"><%=dto.getName()%></a></td>
+										href="tCountUp.jsp?no=<%=dto.getNo()%>"><%=dto.getName()%></a></td>
 									<td align="center" width="125px"><%=dto.getPrice()%></td>
 									<td align="center" width="100px"><%=dto.getWriter()%></td>
 									<td align="center" width="50px"><%=dto.getCount()%></td>

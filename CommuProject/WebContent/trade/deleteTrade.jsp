@@ -17,7 +17,7 @@
 	%>
 	<script type="text/javascript">
 		alert("삭제 되었습니다.");
-		location.replace("tradeList.jsp");
+		location.replace("tradePage.jsp");
 	</script>
 </body>
 </html>
