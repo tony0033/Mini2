@@ -9,8 +9,19 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 </head>
+
 <link rel="stylesheet" type ="text/css" href ="../css/main.css"> 
 <body>
+<script type="text/javascript">
+function idCheck(id){
+	if(id == null){
+		alert("로그인을 해주십시오!");
+		history.back();
+	}else{
+		location.href = "newBBS.jsp";
+	}
+}	
+</script>
 	<table width="<?=$width?>" align="center" cellpadding=0 cellspacing=0
 		style="margin: 0 auto;">
 		<tr>
@@ -79,7 +90,8 @@
  %>
 											</td>
 											<td align="right">
-												<button type="button" onclick="location.href = 'idCheck.jsp'">작성</button>
+												<%String pid = (String)session.getAttribute("id"); %>
+												<button type="button" onclick=idCheck(<%=pid %>)>작성</button>
 											</td>
 										</tr>
 									</table>
@@ -93,6 +105,8 @@
 			</td>
 		</tr>
 	</table>
+	
+	<script type="text/javascript" src = "../js/loginCheck.js" ></script>
 </body>
 </html>
 
