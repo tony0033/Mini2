@@ -154,6 +154,7 @@ public class TradeDAO {
 			dto.setWriter(rs.getString(4));
 			dto.setCount(rs.getInt(5));
 			dto.setStatus(rs.getInt(6));
+			dto.setReport(rs.getInt(7));
 		
 			list.add(dto);
 		}

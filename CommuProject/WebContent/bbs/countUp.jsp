@@ -19,7 +19,7 @@
 	%>
 	
 	<jsp:forward page="bbs.jsp">
-	<jsp:param value="<%=no %>" name="no"/>
+		<jsp:param value="<%=no %>" name="no"/>
 	</jsp:forward>
 </body>
 </html>

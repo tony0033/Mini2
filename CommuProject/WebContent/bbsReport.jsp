@@ -42,7 +42,7 @@
 			<tr>
 				<td align="center" width="10px"><%=dto1.getNo()%></td>
 				<td align="center" width="250px"><a
-					href="countUp.jsp?no=<%=dto1.getNo()%>"><%=dto1.getTitle()%></a></td>
+					href="bbs/countUp.jsp?no=<%=dto1.getNo()%>"><%=dto1.getTitle()%></a></td>
 				<td align="center" width="100px"><%=dto1.getWriter()%></td>
 				<td align="center" width="50px"><%=dto1.getCount()%></td>
 				<td align="center" width="50px"><%=dto1.getBlike()%></td>

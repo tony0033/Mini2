@@ -127,6 +127,7 @@ public class BBSDAO {
 			dto.setDate(rs.getString(5));
 			dto.setCount(rs.getInt(6));
 			dto.setBlike(rs.getInt(7));
+			dto.setReport(rs.getInt(8));
 		}
 		
 		pool.freeConnection(con, ps);

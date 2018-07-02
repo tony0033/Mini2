@@ -106,8 +106,7 @@
 									 		}
 									 	}
 									 %>
-										<button type="button"
-											onclick="location.href = 'tradePage.jsp'">돌아가기</button>
+										<button type="button" onclick=history.back();>돌아가기</button>
 									</td>
 								</tr>
 							</table>
