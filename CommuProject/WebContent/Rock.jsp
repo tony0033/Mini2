@@ -12,6 +12,7 @@
 $(document).ready(function(){
 	
 var roll=1;
+var point = 0;
  playroll = setInterval(function() {
 	roll++;
 	if(roll>3){roll=1;}
@@ -26,14 +27,17 @@ function rock(ran){
 	
 	if(ran == 1){
 	Alert('<img src = "img/roll1.jpg"> 비겼습니다(+0p)');
+	var point = 0;
 	}
 	else if (ran == 2){
 		Alert('<img src = "img/roll2.jpg"> 졌습니다.(-500p)');
+		var point = -500;
 	}
 	else {
 		Alert('<img src = "img/roll3.jpg"> 이겼습니다!!(+500p)');
+		var point = 500;
 	}
-	location.reload();
+	location.href="Rockpoint.jsp?point="+point;
 }
 function scissors(ran){
 	
@@ -41,14 +45,17 @@ function scissors(ran){
 	
 	if(ran == 1){
 	Alert('<img src = "img/roll1.jpg"> 졌습니다.(-500p)');
+	var point = -500;
 	}
 	else if (ran == 2){
 		Alert('<img src = "img/roll2.jpg"> 이겼습니다!!(+500p)');
+		var point = 500;
 	}
 	else {
 		Alert('<img src = "img/roll3.jpg"> 비겼습니다(+0p)');
+		var point = 0;
 	}
-	location.reload();
+	location.href="Rockpoint.jsp?point="+point;
 }
 function paper(ran){
 	
@@ -56,14 +63,17 @@ function paper(ran){
 	
 	if(ran == 1){
 	Alert('<img src = "img/roll1.jpg"> 이겼습니다!!(+500p)');
+	var point = 500;
 	}
 	else if (ran == 2){
 		Alert('<img src = "img/roll2.jpg"> 비겼습니다(+0p)');
+		var point = 0;
 	}
 	else {
 		Alert('<img src = "img/roll3.jpg"> 졌습니다.(-500p)');
+		var point = -500;
 	}
-	location.reload();
+	location.href="Rockpoint.jsp?point="+point;
 }
 
 
