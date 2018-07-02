@@ -26,8 +26,8 @@
 		</script>
 	<%
 		}else{
-			dao.delete(no);
 			dao1.updateExp(dto.getWriter());
+			dao.delete(no);
 	%>
 		<script type="text/javascript">
 			alert("신고수가 5회가 넘었으므로 게시물을 삭제합니다!")

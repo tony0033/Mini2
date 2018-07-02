@@ -93,6 +93,7 @@ public class MemberDAO {
 		
 		String sql = "update member set exp=exp+1 where id = ?";
 		
+		ps = con.prepareStatement(sql);
 		ps.setString(1, id);
 		
 		ps.executeUpdate();

@@ -28,7 +28,7 @@
 		</script>
 	<%
 		}else{
-			dao1.updateExp("a");
+			dao1.updateExp(dto.getWriter());
 			dao.delete(no);
 	%>
 		<script type="text/javascript">
