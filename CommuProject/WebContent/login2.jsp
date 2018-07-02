@@ -1,8 +1,10 @@
+<%@page import="java.text.SimpleDateFormat"%>
+<%@page import="java.util.Date"%>
 <%@page import="com.sun.java.swing.plaf.windows.resources.windows"%>
 <%@page import="bean.MemberDTO"%>
 <%@page import="bean.MemberDAO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8" errorPage="iderror.jsp"%>
+    pageEncoding="UTF-8" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -17,14 +19,28 @@
 		String pw = request.getParameter("pw");
 		MemberDAO dao = new MemberDAO();
 		MemberDTO dto = dao.select(id1);
-
+		Date d = new Date();
+		SimpleDateFormat sdf = 	new SimpleDateFormat("yyyy-MM-dd");
 	if (pw.equals(dto.getPw())) {
 
 			String id = request.getParameter("id");
 			session.setAttribute("id", id);
+		if (!dto.getLast().equals(sdf.format(d))){
+			dao.updatefree(id, 500);
+			dto.setLast(sdf.format(d));
+			dao.update(dto);
+			%>
+			<script type="text/javascript">
+			alert("오늘 출석 하셨습니다 +500p");
+			</script>
+			<%
+		}
+		
+	
 	%>
-
-	<jsp:forward page="main.jsp"></jsp:forward>
+	<script type="text/javascript">
+	location.href="main.jsp"
+	</script>
 	<%
 		} else {
 			if (!id1.equals("admin")) {

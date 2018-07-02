@@ -12,6 +12,7 @@
 
 <link rel="stylesheet" type ="text/css" href ="../css/main.css"> 
 <body>
+
 <script type="text/javascript">
 function idCheck(id){
 	if(id == null){
@@ -20,7 +21,7 @@ function idCheck(id){
 	}else{
 		location.href = "newBBS.jsp";
 	}
-}	
+}
 </script>
 	<table width="<?=$width?>" align="center" cellpadding=0 cellspacing=0
 		style="margin: 0 auto;">

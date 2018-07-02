@@ -29,7 +29,7 @@
 		BBSDAO dao = new BBSDAO();
 		dao.insert(dto);
 		MemberDAO daoi = new MemberDAO();
-		daoi.updatefree(writer, 30);
+		daoi.updatefree(writer, 100);
 		%>
 	
 	<script type="text/javascript">
