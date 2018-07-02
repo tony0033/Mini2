@@ -1,7 +1,6 @@
 <%@page import="bean.MemberDAO"%>
-<%@page import="bean.MemberDTO"%>
-<%@page import="bean.BBSDTO"%>
-<%@page import="bean.BBSDAO"%>
+<%@page import="bean.TradeDTO"%>
+<%@page import="bean.TradeDAO"%>
 <%@page import="com.mysql.jdbc.PreparedStatement.ParseInfo"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
@@ -15,16 +14,15 @@
 	<%
 		int no = Integer.parseInt(request.getParameter("no"));
 		
-		BBSDAO dao = new BBSDAO();
-		BBSDTO dto = dao.select(no);
+		TradeDAO dao = new TradeDAO();
+		TradeDTO dto = dao.select(no);
 		MemberDAO dao1 = new MemberDAO();
-		
 		if(dto.getReport()<5){
 			dao.updateReport(dto);
 	%>
 		<script type="text/javascript">
 			alert("신고 하였습니다.");
-			location.replace("bbs.jsp?no=<%=no%>");
+			location.replace("trade.jsp?no=<%=no%>");
 		</script>
 	<%
 		}else{
@@ -32,11 +30,12 @@
 			dao.delete(no);
 	%>
 		<script type="text/javascript">
-				alert("신고수가 5회가 넘었으므로 게시물을 삭제합니다!")
-				history.back(2);
+			alert("신고수가 5회가 넘었으므로 게시물을 삭제합니다!")
+			history.back(2);
 		</script>
 	<%
 		}
 	%>
+	
 </body>
 </html>

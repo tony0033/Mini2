@@ -73,14 +73,14 @@
 										   <%
  	} else{
  %>
-											<button type="button" onclick=report();">신고하기</button> 
+											<button type="button" onclick=report();>신고하기</button> 
 											<%
  	}
  	}
  %>
 											<button type="button"
 												onclick="location.href = 'likeUp.jsp?no=<%=dtoB.getNo()%>';info();">추천하기</button>
-											<button type="button" onclick="location.href = '../main.jsp'">돌아가기</button>
+											<button type="button" onclick=history.back();>돌아가기</button>
 										</td>
 									</tr>
 								</table>

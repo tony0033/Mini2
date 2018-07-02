@@ -27,6 +27,7 @@
 							function info(){
 								alert("추천하기 완료!");
 								}
+							
 								function check(){
 								var check = confirm("삭제하시겠습니까?");
 								if(check){
@@ -34,6 +35,15 @@
 								}else{
 									return;
 								}
+								}
+								
+								function report(){
+									var check = confirm("신고하시겠습니까?");
+									if(check){
+										location.replace("report.jsp?no=<%=dtoT.getNo()%>");
+									}else{
+										return;
+									}
 								}
 						</script>
 
@@ -90,12 +100,16 @@
 									<%
 									 	} else {
 									 			}
+							 		%>
+							 				<button type="button" onclick=report();>신고하기</button>
+							 		<%
 									 		}
 									 	}
 									 %>
 									 <button type = "button" onclick="location.href='basket.jsp?no=<%=no%>'">장바구니 추가</button>
 										<button type="button"
 											onclick="location.href = 'tradePage.jsp'">돌아가기</button>
+										<button type="button" onclick=history.back();>돌아가기</button>
 									</td>
 								</tr>
 							</table>

@@ -88,6 +88,19 @@ public class MemberDAO {
 		pool.freeConnection(con, ps);
 	}
 	
+	public void updateExp(String id) throws Exception {
+		con = pool.getConnection();
+		
+		String sql = "update member set exp=exp+1 where id = ?";
+		
+		ps = con.prepareStatement(sql);
+		ps.setString(1, id);
+		
+		ps.executeUpdate();
+		
+		pool.freeConnection(con, ps);
+	}
+	
 	public void delete(String id) throws Exception {
 		con = pool.getConnection();
 		
@@ -157,6 +170,47 @@ public class MemberDAO {
 		
 		return list;
 	}
-	
+	public ArrayList memberAll() throws Exception {
+		con = pool.getConnection();
+		
+		String sql = "select * from member order by last desc";
+		
+		ps = con.prepareStatement(sql);
+		rs = ps.executeQuery();
+		
+		ArrayList list = new ArrayList();
+		while(rs.next()) {
+			MemberDTO dto = new MemberDTO();
+			
+			dto.setId(rs.getString(1));
+			dto.setPw(rs.getString(2));
+			dto.setName(rs.getString(3));
+			dto.setPay(rs.getString(4));
+			dto.setFree(rs.getString(5));
+			dto.setExp(rs.getString(6));
+			dto.setLast(rs.getString(7));
+			list.add(dto);
+		}
+		
+		pool.freeConnection(con, ps);
+		
+		return list;
+	}
+	public int memberCount(){
+		  int cnt=0;
+		  try{
+		   con = pool.getConnection();
+		   String sql = "select count(*) from member";
+		   ps = con.prepareStatement(sql);
+		   rs = ps.executeQuery();
+		   rs.next();
+		   cnt = rs.getInt("count(*)");
+		  }catch(Exception e){
+		   e.printStackTrace();
+		  }finally{
+		   pool.freeConnection(con,ps);
+		  }
+		  return cnt;
+		 }
 }
 
