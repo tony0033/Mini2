@@ -1,3 +1,4 @@
+<%@page import="bean.MemberDAO"%>
 <%@page import="bean.TradeDTO"%>
 <%@page import="bean.TradeDAO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
@@ -21,6 +22,8 @@
 		dto.setWriter(writer);
 		TradeDAO dao = new TradeDAO();
 		dao.insert(dto);
+		MemberDAO dao2 = new MemberDAO();
+		dao2.updatefree(writer, 100);
 	%>
 	
 	<script type="text/javascript">

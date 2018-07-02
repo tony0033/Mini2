@@ -31,6 +31,8 @@ public class MemberDAO {
 		ps.setString(4, dto.getPay());
 		ps.setString(5, dto.getFree());
 		ps.setString(6, dto.getExp());
+		ps.setString(7, dto.getLast());
+
 		ps.executeUpdate();
 		
 		pool.freeConnection(con, ps);
@@ -39,7 +41,7 @@ public class MemberDAO {
 	public void update(MemberDTO dto) throws Exception {
 		con = pool.getConnection();
 		
-		String sql = "update member set pw = ?, name = ?, pay = ?, free = ?, exp = ? where id = ?";
+		String sql = "update member set pw = ?, name = ?, pay = ?, free = ?, exp = ?, last=? where id = ?";
 		
 		ps = con.prepareStatement(sql);
 		
@@ -48,7 +50,8 @@ public class MemberDAO {
 		ps.setString(3, dto.getPay());
 		ps.setString(4, dto.getFree());
 		ps.setString(5, dto.getExp());
-		ps.setString(6, dto.getId());
+		ps.setString(6, dto.getLast());
+		ps.setString(7, dto.getId());
 		
 		ps.executeUpdate();
 		
@@ -119,6 +122,8 @@ public class MemberDAO {
 			dto.setPay(rs.getString(4));
 			dto.setFree(rs.getString(5));
 			dto.setExp(rs.getString(6));
+			dto.setLast(rs.getString(7));
+
 		}
 		
 		pool.freeConnection(con, ps);
@@ -144,7 +149,7 @@ public class MemberDAO {
 			dto.setPay(rs.getString(4));
 			dto.setFree(rs.getString(5));
 			dto.setExp(rs.getString(6));
-		
+			dto.setLast(rs.getString(7));
 			list.add(dto);
 		}
 		
