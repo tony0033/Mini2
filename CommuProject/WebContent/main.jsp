@@ -9,7 +9,7 @@
 <script type="text/javascript">
 var s;
 </script>
-<link rel="stylesheet" type ="text/css" href ="css/main.css"> 
+<link rel="stylesheet" type ="text/css" href ="CommuProject/css/main.css"> 
 <body>
 	<table width="<?=$width?>" align="center" cellpadding=0 cellspacing=0
 		style="margin: 0 auto;">
@@ -28,7 +28,7 @@ var s;
 							<a href = "trade/tradePage.jsp"><img src =img/trade.png id = "picture"></a>
 							<jsp:include page="trademain.jsp"/>
 						</div>
-					</div>
+					</div> 
 				</div>
 				
 			</td>

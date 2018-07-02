@@ -78,6 +78,7 @@
 										<button type="button" onclick="location.href = 'idCheck.jsp'">등록</button>
 									</td>
 								</tr>
+								</table>
 								</center>
 								</div>
 					</div>
