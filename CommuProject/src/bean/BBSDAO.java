@@ -78,6 +78,21 @@ public class BBSDAO {
 		
 		pool.freeConnection(con, ps);
 	}
+	public void updateReport(BBSDTO dto) throws Exception {
+		con = pool.getConnection();
+		
+		String sql = "update BBS set report = ? where no = ?";
+		
+		ps = con.prepareStatement(sql);
+		
+		dto.setReport(dto.getReport()+1);
+		ps.setInt(1, dto.getBlike());
+		ps.setInt(2, dto.getNo());
+		
+		ps.executeUpdate();
+		
+		pool.freeConnection(con, ps);
+	}
 	
 	public void delete(int no) throws Exception {
 		con = pool.getConnection();

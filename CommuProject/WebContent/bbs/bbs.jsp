@@ -26,6 +26,14 @@
 			return;
 		}
 	}
+	function report(){
+		var check = confirm("신고하시겠습니까?");
+		if(check){
+			location.replace("report.jsp?no=<%=dtoB.getNo()%>");
+		}else{
+			return;
+		}
+	}
 </script>
 
 </head>
@@ -61,9 +69,13 @@
 											%>
 											<button type="button"
 												onclick="location.href ='changeBBS.jsp?no=<%=dtoB.getNo()%>'">수정</button>
-											<button type="button" onclick=check();>제거</button> <%
- 	} else if (pid.equals("")) {
- 		}
+											<button type="button" onclick=check();>제거</button>
+										   <%
+ 	} else{
+ %>
+											<button type="button" onclick=report();">신고하기</button> 
+											<%
+ 	}
  	}
  %>
 											<button type="button"

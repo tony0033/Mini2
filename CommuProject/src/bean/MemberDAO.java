@@ -76,7 +76,7 @@ public class MemberDAO {
 	public void updatefree(String id, int free) throws Exception {
 		con = pool.getConnection();
 		
-		String sql = "update member set pay = pay + ? where id = ?";
+		String sql = "update member set free = free + ? where id = ?";
 		
 		ps = con.prepareStatement(sql);
 		ps.setInt(1, free);
