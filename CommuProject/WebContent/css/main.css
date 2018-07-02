@@ -25,6 +25,7 @@ body {
 }
 #leftLay {
 	width: 300px;
+	padding-top:50px;
 	float: left;
 }
 #login {
