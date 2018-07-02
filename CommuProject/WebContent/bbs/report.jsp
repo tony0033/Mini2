@@ -1,3 +1,5 @@
+<%@page import="bean.MemberDAO"%>
+<%@page import="bean.MemberDTO"%>
 <%@page import="bean.BBSDTO"%>
 <%@page import="bean.BBSDAO"%>
 <%@page import="com.mysql.jdbc.PreparedStatement.ParseInfo"%>
@@ -15,6 +17,7 @@
 		
 		BBSDAO dao = new BBSDAO();
 		BBSDTO dto = dao.select(no);
+		MemberDAO dao1 = new MemberDAO();
 		
 		if(dto.getReport()<5){
 			dao.updateReport(dto);
@@ -25,6 +28,7 @@
 		</script>
 	<%
 		}else{
+			dao1.updateExp("a");
 			dao.delete(no);
 	%>
 		<script type="text/javascript">

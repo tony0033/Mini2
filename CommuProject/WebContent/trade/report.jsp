@@ -1,3 +1,4 @@
+<%@page import="bean.MemberDAO"%>
 <%@page import="bean.TradeDTO"%>
 <%@page import="bean.TradeDAO"%>
 <%@page import="com.mysql.jdbc.PreparedStatement.ParseInfo"%>
@@ -15,6 +16,7 @@
 		
 		TradeDAO dao = new TradeDAO();
 		TradeDTO dto = dao.select(no);
+		MemberDAO dao1 = new MemberDAO();
 		if(dto.getReport()<5){
 			dao.updateReport(dto);
 	%>
@@ -25,6 +27,7 @@
 	<%
 		}else{
 			dao.delete(no);
+			dao1.updateExp(dto.getWriter());
 	%>
 		<script type="text/javascript">
 			alert("신고수가 5회가 넘었으므로 게시물을 삭제합니다!")

@@ -18,6 +18,7 @@
 					<%@ include file="/left.jsp"%>
 					<div id="rightLay">
 						<div id = "report">
+							<img src=/CommuProject/img/memberall.png id=picture>
 							<body>
 								<center>
 									<table border="1">
@@ -26,7 +27,7 @@
 											<td align="center" width="100px">이름</td>
 											<td align="center" width="100px">유료포인트</td>
 											<td align="center" width="100px">무료포인트</td>
-											<td align="center" width="100px">신고횟수</td>
+											<td align="center" width="100px">삭제횟수</td>
 											<td align="center" width="100px">최근로그인</td>
 
 										</tr>
@@ -69,7 +70,7 @@
 														tot++;
 													}
 													for (int i = 0; i < tot; i++) {
-												%> <a href="bbsPage.jsp?pageNum=<%=i + 1%>">[<%=(i + 1)%>]
+												%> <a href="memberList.jsp?pageNum=<%=i + 1%>">[<%=(i + 1)%>]
 											</a> <%
  	}
  %>

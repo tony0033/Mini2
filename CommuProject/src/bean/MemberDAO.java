@@ -88,6 +88,18 @@ public class MemberDAO {
 		pool.freeConnection(con, ps);
 	}
 	
+	public void updateExp(String id) throws Exception {
+		con = pool.getConnection();
+		
+		String sql = "update member set exp=exp+1 where id = ?";
+		
+		ps.setString(1, id);
+		
+		ps.executeUpdate();
+		
+		pool.freeConnection(con, ps);
+	}
+	
 	public void delete(String id) throws Exception {
 		con = pool.getConnection();
 		
