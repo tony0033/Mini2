@@ -18,7 +18,7 @@ public class TradeDAO {
 	public void insert(TradeDTO dto) throws Exception {
 		con = pool.getConnection();
 		
-		String sql = "insert into trade (name, price, writer, count, status) values(?,?,?,0,0)";
+		String sql = "insert into trade (name, price, writer, count, status,report) values(?,?,?,0,0,0)";
 		
 		ps = con.prepareStatement(sql);
 		
@@ -74,6 +74,19 @@ public class TradeDAO {
 		
 		ps.setInt(1, dto.getStatus());
 		ps.setInt(2, dto.getNo());
+		
+		ps.executeUpdate();
+		
+		pool.freeConnection(con, ps);
+	}
+	public void updateReport(TradeDTO dto) throws Exception {
+		con = pool.getConnection();
+		
+		String sql = "update trade set report = report+1 where no = ?";
+		
+		ps = con.prepareStatement(sql);
+		
+		ps.setInt(1, dto.getNo());
 		
 		ps.executeUpdate();
 		
@@ -168,6 +181,7 @@ public class TradeDAO {
 			dto.setWriter(rs.getString(4));
 			dto.setCount(rs.getInt(5));
 			dto.setStatus(rs.getInt(6));
+			dto.setReport(rs.getInt(7));
 		
 			list.add(dto);
 		}
@@ -196,6 +210,7 @@ public class TradeDAO {
 			dto.setWriter(rs.getString(4));
 			dto.setCount(rs.getInt(5));
 			dto.setStatus(rs.getInt(6));
+			dto.setReport(rs.getInt(7));
 			
 			list.add(dto);
 		}
@@ -221,5 +236,21 @@ public class TradeDAO {
 		  }
 		  return cnt;
 		 }
+	public int tradeRCount(){
+		int cnt=0;
+		try{
+			con = pool.getConnection();
+			String sql = "select count(*) from trade where report >= 1";
+			ps = con.prepareStatement(sql);
+			rs = ps.executeQuery();
+			rs.next();
+			cnt = rs.getInt("count(*)");
+		}catch(Exception e){
+			e.printStackTrace();
+		}finally{
+			pool.freeConnection(con,ps);
+		}
+		return cnt;
+	}
 	
 }

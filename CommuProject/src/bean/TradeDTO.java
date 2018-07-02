@@ -7,7 +7,7 @@ public class TradeDTO {
 	private String writer;
 	private int count;
 	private int status;
-	
+	private int report;
 	
 	public int getNo() {
 		return no;
@@ -44,6 +44,12 @@ public class TradeDTO {
 	}
 	public void setStatus(int status) {
 		this.status = status;
+	}
+	public int getReport() {
+		return report;
+	}
+	public void setReport(int report) {
+		this.report = report;
 	}
 	
 	

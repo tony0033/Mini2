@@ -20,6 +20,17 @@ var s;
 					<jsp:include page="left.jsp"/>
 					
 					<div id="rightLay">
+						<%if(session.getAttribute("id") != null){
+							if(session.getAttribute("id").equals("admin")){
+						%>
+							<a href = "reportList.jsp"><img src =img/reportlist.png id = "picture"></a>
+							<a href = "memberList.jsp"><img src =img/memberlist.png id = "picture"></a>
+						<%
+							}else{
+							}
+						}
+						
+						%>
 						<div id="bbs">
 							<a href = "bbs/bbsPage.jsp"><img src =img/bbs.png id = "picture"></a>
 							<jsp:include page="bbsmain.jsp"/>

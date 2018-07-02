@@ -18,8 +18,8 @@ public class BBSDAO {
 	public void insert(BBSDTO dto) throws Exception {
 		con = pool.getConnection();
 		
-		String sql = "insert into bbs (title, content, writer, date, count, blike) "
-				+ "values(?,?,?,?,0,0)";
+		String sql = "insert into bbs (title, content, writer, date, count, blike,report) "
+				+ "values(?,?,?,?,0,0,0)";
 		
 		ps = con.prepareStatement(sql);
 		
@@ -81,13 +81,11 @@ public class BBSDAO {
 	public void updateReport(BBSDTO dto) throws Exception {
 		con = pool.getConnection();
 		
-		String sql = "update BBS set report = ? where no = ?";
+		String sql = "update BBS set report = report+1 where no = ?";
 		
 		ps = con.prepareStatement(sql);
 		
-		dto.setReport(dto.getReport()+1);
-		ps.setInt(1, dto.getBlike());
-		ps.setInt(2, dto.getNo());
+		ps.setInt(1, dto.getNo());
 		
 		ps.executeUpdate();
 		
@@ -155,6 +153,7 @@ public class BBSDAO {
 			dto.setDate(rs.getString(5));
 			dto.setCount(rs.getInt(6));
 			dto.setBlike(rs.getInt(7));
+			dto.setReport(rs.getInt(8));
 		
 			list.add(dto);
 		}
@@ -185,6 +184,7 @@ public class BBSDAO {
 			dto.setDate(rs.getString(5));
 			dto.setCount(rs.getInt(6));
 			dto.setBlike(rs.getInt(7));
+			dto.setReport(rs.getInt(8));
 			
 			list.add(dto);
 		}
@@ -210,5 +210,21 @@ public class BBSDAO {
 		  }
 		  return cnt;
 		 }
+	public int bbsRCount(){
+		int cnt=0;
+		try{
+			con = pool.getConnection();
+			String sql = "select count(*) from bbs where report >= 1";
+			ps = con.prepareStatement(sql);
+			rs = ps.executeQuery();
+			rs.next();
+			cnt = rs.getInt("count(*)");
+		}catch(Exception e){
+			e.printStackTrace();
+		}finally{
+			pool.freeConnection(con,ps);
+		}
+		return cnt;
+	}
 	
 }

@@ -73,7 +73,7 @@
 										   <%
  	} else{
  %>
-											<button type="button" onclick=report();">신고하기</button> 
+											<button type="button" onclick=report();>신고하기</button> 
 											<%
  	}
  	}
