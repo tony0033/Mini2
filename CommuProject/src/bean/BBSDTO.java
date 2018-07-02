@@ -8,6 +8,7 @@ public class BBSDTO {
 	private String date;
 	private int count;
 	private int blike;
+	private int report;
 	
 
 	public int getNo() {
@@ -52,4 +53,11 @@ public class BBSDTO {
 	public void setBlike(int blike) {
 		this.blike = blike;
 	}
+	public int getReport() {
+		return report;
+	}
+	public void setReport(int report) {
+		this.report = report;
+	}
+	
 }
