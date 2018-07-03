@@ -58,7 +58,7 @@ body {
 padding-top:50px;
 	float:  right;
 	width: 800px;
-	height: 300px;
+	height: 400px;
 }
 #report{
 padding-top:50px;
@@ -77,7 +77,14 @@ padding-top:50px;
 	padding-top:30px;
 	float: right;
 	width: 800px;
-	height: 300px;
+	height: 400px;
+}
+#comment{
+	/* padding-left: 100px; */
+	padding-top:30px;
+	float: right;
+	width: 800px;
+	height: 500px;
 }
 button{
 	background-image: url("../img/back.jpeg");

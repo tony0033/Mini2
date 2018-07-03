@@ -1,3 +1,6 @@
+<%@page import="java.util.ArrayList"%>
+<%@page import="bean.CommentDTO"%>
+<%@page import="bean.CommentDAO"%>
 <%@page import="bean.BBSDTO"%>
 <%@page import="bean.BBSDAO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
@@ -35,9 +38,9 @@
 		}
 	}
 </script>
-
-</head>
 <link rel="stylesheet" type ="text/css" href ="/CommuProject/css/main.css"> 
+</head>
+
 <body>
 	<table width="<?=$width?>" align="center" cellpadding=0 cellspacing=0
 		style="margin: 0 auto;">
@@ -48,8 +51,7 @@
 					<%@ include file="/left.jsp"%>
 					<div id="rightLay">
 						<div id="bbs">
-							<body>
-								<center>
+						<center>
 									<table border="1">
 										<tr>
 											<td align="center" width="100px">제목</td>
@@ -57,9 +59,9 @@
 										</tr>
 										<tr>
 											<td align="center" width="100px">내용</td>
-											<td align="center" width="350px" height="350px"><%=dtoB.getContent()%></td>
+											<td align="center" width="350px" height="300px"><%=dtoB.getContent()%></td>
 										</tr>
-									</table>
+									</table><br>
 									<table>
 										<tr>
 											<td align="right" width="450px">
@@ -84,14 +86,55 @@
 										</tr>
 									</table>
 								</center>
-							</body>
-					<%-- 		<%@ include file="bbsComment.jsp?no=<%=no %>" %> --%>
+							</div>
+							<div id = "comment">
+						
+							<center>
+								<table width="500px" border="1">
+									<tr>
+										<td width=100px;>작성자</td>
+										<td width=300px;>내용</td>
+										<td width=100px;>날짜</td>
+									</tr>
+									<%
+										CommentDAO daoC = new CommentDAO();
+										ArrayList listC = daoC.select(no);
+
+										for (int i = 0; i < listC.size(); i++) {
+											CommentDTO dtoC = (CommentDTO) listC.get(i);
+									%>
+									<tr>
+										<td align="center" width="100px"><%=dtoC.getWriter()%></td>
+										<td align="center" width="300px"><%=dtoC.getContent()%></td>
+										<td align="center" width="100px"><%=dtoC.getDate()%></td>
+									</tr>
+
+									<%
+										}
+									%>
+								</table>
+									<%
+										if (session.getAttribute("id") != null) {
+									%> 
+										<form action=newComment.jsp>
+										<table>
+										<tr>
+											<td colspan="3" align="center">
+											<textarea cols="50" name="content">
+											</textarea> 
+											<input type="submit" value="댓글 작성">
+											</td>
+										</tr>
+										</table>
+										</form>
+								 	 <%} %> 
+							</center>
 						</div>
 					</div>
 				</div>
 				
 			</td>
 		</tr>
-	</table>
+	</table> 
 </body>
 </html>

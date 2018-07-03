@@ -11,10 +11,7 @@
 </head>
 <body>
 <center>
-<%
-	int no = Integer.parseInt(request.getParameter("no"));
-	
-%>
+
 <form action = newComment.jsp>
 	<table width = "500px" border="1">
 		<tr>
@@ -23,10 +20,10 @@
 			<td align = "center" width = "100px">날짜</td>
 		</tr>
 			<%
-				CommentDAO dao = new CommentDAO();
-				ArrayList list = dao.select(no);
-				for(int i=0;i<list.size();i++){
-					CommentDTO dto = (CommentDTO)list.get(i);
+				CommentDAO daoC = new CommentDAO();
+				ArrayList listC = daoC.select(40);
+				for(int i=0;i<listC.size();i++){
+					CommentDTO dto = (CommentDTO)listC.get(i);
 			%>
 				<tr>
 					<td align = "center" width = "100px"><%=dto.getWriter() %></td>
@@ -38,11 +35,21 @@
 				}
 			%>
 	</table>
+	<%if(session.getAttribute("id")!=null){ %>
+	<input type ="hidden" name = "no" value = <%=no %>>
 	<table width = "500px" border ="1">
 		<tr>
-		
+			<td align = "center">
+				<textarea width = "450px" name = "content"></textarea>
+			</td>
+		</tr>
+		<tr>
+			<td align = "rigth">
+				<input type ="submit" value ="댓글 작성">
+			</td>
 		</tr>
 	</table>
+	<%} %>
 </form>
 </center>
 </body>
