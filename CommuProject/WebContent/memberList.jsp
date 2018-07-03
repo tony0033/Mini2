@@ -55,10 +55,10 @@
 											<td align="center" width="100px"><%=dto1.getExp()%></td>
 											<td align="center" width="100px"><%=dto1.getLast()%></td>
 											<td align="center" width="50px">
-												<button type="button" onclick=check(); >수정</button>	
+												<button type="button" onclick="location.href='memberCure.jsp?id=<%=dto1.getId() %>'" >수정</button>	
 											</td>
 											<td align="center" width="50px">
-												<button type="button" onclick=delCheck();>삭제</button>											
+												<button type="button" onclick="location.href='memberDelete.jsp?id=<%=dto1.getId()%>'">삭제</button>											
 											</td>
 										</tr>
 										<%
@@ -92,15 +92,5 @@
 			</td>
 		</tr>
 	</table>
-	<script type="text/javascript">
-		function check(){
-			var check = confirm("수정하시겠습니까?");
-			if(check){
-				
-			}else{
-				
-			}
-		}			
-	</script>
 </body>
 </html>
