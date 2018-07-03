@@ -26,6 +26,7 @@ TradeDTO dtoB = daoB.select(no);
 %>
 <script type="text/javascript">
 alert("장바구니에 추가되었습니다.");
+history.back();
 </script>
 
 </body>

@@ -14,9 +14,9 @@ fieldset {
 
 <body>
 	<%
-String id = (String)session.getAttribute("id");
-if (id==null){ 
-	id = session.getId().substring(0, 6);
+String chatId = (String)session.getAttribute("id");
+if (chatId==null){ 
+	chatId = session.getId().substring(0, 6);
 }
 %>
 	<fieldset align = "center">
@@ -54,7 +54,7 @@ if (id==null){
 	}
 	function send() {
 		textarea.value += "나 : " + inputMessage.value + "\n";
-		webSocket.send("<%= id%>" + ":|" + inputMessage.value);
+		webSocket.send("<%= chatId%>" + ":|" + inputMessage.value);
 		inputMessage.value = "";
 	}
 </script>

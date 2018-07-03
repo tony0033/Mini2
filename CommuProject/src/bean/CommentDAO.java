@@ -18,7 +18,7 @@ public class CommentDAO {
 	public void insert(CommentDTO dto) throws Exception {
 		con = pool.getConnection();
 		
-		String sql = "insert into comment values('','','','')";
+		String sql = "insert into comment values(?,?,?,?)";
 		
 		ps = con.prepareStatement(sql);
 		

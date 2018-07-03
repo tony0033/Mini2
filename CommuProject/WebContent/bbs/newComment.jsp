@@ -16,7 +16,7 @@
 	String content = request.getParameter("content");
 	String writer = (String)session.getAttribute("id");
 	Date date = new Date();
-	SimpleDateFormat sdf = new SimpleDateFormat();
+	SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 	
 	CommentDTO dto = new CommentDTO();
 	dto.setNo(no);

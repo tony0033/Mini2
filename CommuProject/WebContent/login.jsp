@@ -53,7 +53,7 @@
 
 	<%=session.getAttribute("id")%>님 환영합니다.
 	<br> 유료포인트:<%=dto.getPay()%><br> 기본포인트:<%=dto.getFree()%><br>
-	경험치:<%=dto.getExp()%><br>
+	신고 횟수:<%=dto.getExp()%><br>
 
 	<a href="http://localhost:8888/CommuProject/logout.jsp">로그아웃</a>
 

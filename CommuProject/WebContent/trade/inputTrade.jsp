@@ -30,6 +30,6 @@
 		confirm("작성완료");
 	</script>
 	
-	<jsp:forward page="tradeList.jsp"></jsp:forward>
+	<jsp:forward page="tradePage.jsp"></jsp:forward>
 </body>
 </html>

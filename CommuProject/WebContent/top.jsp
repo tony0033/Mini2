@@ -17,7 +17,7 @@
 		<div id="adver">
 			<img src="/CommuProject/img/adver.gif" width="700" height="100">
 		</div>
-		<jsp:include page="menu.jsp"></jsp:include>
+		<%@ include file="/menu.jsp"%>
 	</div>
 </body>
 </html>

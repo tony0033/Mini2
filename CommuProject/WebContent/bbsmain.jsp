@@ -1,3 +1,4 @@
+<%@page import="bean.CommentDAO"%>
 <%@page import="bean.BBSDTO"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="bean.BBSDAO"%>

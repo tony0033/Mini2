@@ -19,7 +19,7 @@
 		%>
 		<script type="text/javascript">
 		alert("장바구니에 아무것도 없습니다");
-		history.back;
+		history.back();
 		</script>
 		
 		<% 

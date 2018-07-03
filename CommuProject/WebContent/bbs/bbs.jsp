@@ -81,7 +81,7 @@
  %>
 												<button type="button"
 													onclick="location.href = 'likeUp.jsp?no=<%=dtoB.getNo()%>';info();">추천하기</button>
-												<button type="button" onclick=history.back();>돌아가기</button>
+												<button type="button" onclick="location.href='bbsPage.jsp'">돌아가기</button>
 											</td>
 										</tr>
 									</table>
@@ -116,7 +116,7 @@
 									<%
 										if (session.getAttribute("id") != null) {
 									%> 
-										<form action=newComment.jsp>
+										<form action="newComment.jsp">
 										<table>
 										<tr>
 											<td colspan="2" align="center">
@@ -124,6 +124,7 @@
 											</textarea> 
 											</td>
 											<td align = "center">
+												<input type="hidden" name="no" value=<%=no %>>
 												<input type="submit" value="댓글 작성">
 											</td>
 										</tr>
