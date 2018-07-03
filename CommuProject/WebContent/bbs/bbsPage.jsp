@@ -2,7 +2,7 @@
 <%@page import="java.util.ArrayList"%>
 <%@page import="bean.BBSDAO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -10,19 +10,19 @@
 <title>Insert title here</title>
 </head>
 
-<link rel="stylesheet" type ="text/css" href ="../css/main.css"> 
+<link rel="stylesheet" type="text/css" href="../css/main.css">
 <body>
 
-<script type="text/javascript">
-function idCheck(id){
-	if(id == null){
-		alert("로그인을 해주십시오!");
-		history.back();
-	}else{
-		location.href = "newBBS.jsp";
-	}
-}
-</script>
+	<script type="text/javascript">
+		function idCheck(id) {
+			if (id == null) {
+				alert("로그인을 해주십시오!");
+				history.back();
+			} else {
+				location.href = "newBBS.jsp";
+			}
+		}
+	</script>
 	<table width="<?=$width?>" align="center" cellpadding=0 cellspacing=0
 		style="margin: 0 auto;">
 		<tr>
@@ -32,7 +32,6 @@ function idCheck(id){
 					<%@ include file="../left.jsp"%>
 					<div id="rightLay">
 						<div id="bbs">
-							<body>
 								<center>
 									<table border="1">
 										<tr>
@@ -91,23 +90,23 @@ function idCheck(id){
  %>
 											</td>
 											<td align="right">
-												<%String pid = (String)session.getAttribute("id"); %>
-												<button type="button" onclick=idCheck(<%=pid %>)>작성</button>
+												<%
+													String pid = (String) session.getAttribute("id");
+												%>
+												<button type="button" onclick="idCheck('<%=pid%>')">작성</button>
 											</td>
 										</tr>
 									</table>
 								</center>
-							</body>
 						</div>
 
 					</div>
 				</div>
-				
+
 			</td>
 		</tr>
 	</table>
-	
-	<script type="text/javascript" src = "../js/loginCheck.js" ></script>
+
 </body>
 </html>
 

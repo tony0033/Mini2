@@ -39,7 +39,7 @@ var s;
 							<a href = "trade/tradePage.jsp"><img src =img/trade.png id = "picture"></a>
 							<jsp:include page="trademain.jsp"/>
 						</div>
-					</div> 
+					</div>
 				</div>
 				
 			</td>

@@ -17,7 +17,7 @@ String id = (String)session.getAttribute("id");
 
 %>
 <div id = "menu">
-<table id="gametable" border="1">
+<table border="1">
 				<tr>
 					<td align="center" height="20px">빠른이동</td>
 				</tr>
