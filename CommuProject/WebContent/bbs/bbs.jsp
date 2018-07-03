@@ -92,9 +92,9 @@
 							<center>
 								<table width="500px" border="1">
 									<tr>
-										<td width=100px;>작성자</td>
-										<td width=300px;>내용</td>
-										<td width=100px;>날짜</td>
+										<td width=100px; align = "center">작성자</td>
+										<td width=300px; align = "center">내용</td>
+										<td width=100px; align = "center">날짜</td>
 									</tr>
 									<%
 										CommentDAO daoC = new CommentDAO();
@@ -112,17 +112,19 @@
 									<%
 										}
 									%>
-								</table>
+								</table><br>
 									<%
 										if (session.getAttribute("id") != null) {
 									%> 
 										<form action=newComment.jsp>
 										<table>
 										<tr>
-											<td colspan="3" align="center">
+											<td colspan="2" align="center">
 											<textarea cols="50" name="content">
 											</textarea> 
-											<input type="submit" value="댓글 작성">
+											</td>
+											<td align = "center">
+												<input type="submit" value="댓글 작성">
 											</td>
 										</tr>
 										</table>

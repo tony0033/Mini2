@@ -18,8 +18,7 @@
 					<%@ include file="/left.jsp"%>
 					<div id="rightLay">
 						<div id = "report">
-							<img src=/CommuProject/img/memberall.png id=picture>
-							<body>
+							<img src=/CommuProject/img/memberall.png id="picture">
 								<center>
 									<table border="1">
 										<tr>
@@ -29,6 +28,8 @@
 											<td align="center" width="100px">무료포인트</td>
 											<td align="center" width="100px">삭제횟수</td>
 											<td align="center" width="100px">최근로그인</td>
+											<td align="center" width="50px">수정</td>
+											<td align="center" width="50px">삭제</td>
 
 										</tr>
 										<%
@@ -53,12 +54,18 @@
 											<td align="center" width="100px"><%=dto1.getFree()%></td>
 											<td align="center" width="100px"><%=dto1.getExp()%></td>
 											<td align="center" width="100px"><%=dto1.getLast()%></td>
+											<td align="center" width="50px">
+												<button type="button" onclick=check(); >수정</button>	
+											</td>
+											<td align="center" width="50px">
+												<button type="button" onclick=delCheck();>삭제</button>											
+											</td>
 										</tr>
 										<%
 											}
 										%>
 									</table>
-									<table width="630px">
+									<table width="730px">
 										<tr>
 											<td align="center">
 												<%
@@ -78,7 +85,6 @@
 										</tr>
 									</table>
 								</center>
-							</body>
 						</div>
 					</div>
 				</div>
@@ -86,5 +92,15 @@
 			</td>
 		</tr>
 	</table>
+	<script type="text/javascript">
+		function check(){
+			var check = confirm("수정하시겠습니까?");
+			if(check){
+				
+			}else{
+				
+			}
+		}			
+	</script>
 </body>
 </html>

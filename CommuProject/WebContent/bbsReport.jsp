@@ -34,7 +34,7 @@
 
 				int start = (pageNum - 1) * 15;
 				int end = (pageNum * 15);
-				ArrayList list = dao1.selectAll(start, end);
+				ArrayList list = dao1.selectRAll(start, end);
 				for (int i = 0; i < list.size(); i++) {
 					BBSDTO dto1 = (BBSDTO) list.get(i);
 					if (dto1.getReport() >= 1) {

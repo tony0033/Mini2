@@ -21,17 +21,14 @@ public class MemberDAO {
 	public void insert(MemberDTO dto) throws Exception {
 		con = pool.getConnection();
 		
-		String sql = "insert into member values(?,?,?,?,?,?)";
+		String sql = "insert into member values(?,?,?,'0','0','0','0')";
 		
 		ps = con.prepareStatement(sql);
 		
 		ps.setString(1, dto.getId());
 		ps.setString(2, dto.getPw());
 		ps.setString(3, dto.getName());
-		ps.setString(4, dto.getPay());
-		ps.setString(5, dto.getFree());
-		ps.setString(6, dto.getExp());
-		ps.setString(7, dto.getLast());
+		
 
 		ps.executeUpdate();
 		
@@ -173,7 +170,7 @@ public class MemberDAO {
 	public ArrayList memberAll() throws Exception {
 		con = pool.getConnection();
 		
-		String sql = "select * from member order by last desc";
+		String sql = "select * from member order by exp desc";
 		
 		ps = con.prepareStatement(sql);
 		rs = ps.executeQuery();

@@ -31,7 +31,7 @@
 				}
 				int start1 = (pageNum1 - 1) * 15;
 				int end1 = pageNum1 * 15;
-				ArrayList list1 = dao3.selectAll(start1, end1);
+				ArrayList list1 = dao3.selectTAll(start1, end1);
 				for (int i = 0; i < list1.size(); i++) {
 					TradeDTO dto = (TradeDTO) list1.get(i);
 					if(dto.getReport()>=1){

@@ -51,7 +51,7 @@ public class CommentDAO {
 	public ArrayList select(int no) throws Exception {
 		con = pool.getConnection();
 		
-		String sql = "select * from comment where no = ? oreder by date DESC";
+		String sql = "select * from comment where no = ? order by date DESC";
 		
 		ps = con.prepareStatement(sql);
 		ps.setInt(1, no);

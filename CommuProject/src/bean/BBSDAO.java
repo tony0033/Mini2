@@ -194,6 +194,36 @@ public class BBSDAO {
 		
 		return list;
 	}
+	public ArrayList selectRAll(int start, int end) throws Exception {
+		con = pool.getConnection();
+		
+		String sql = "select * from BBS order by report desc limit ?,?";
+		
+		ps = con.prepareStatement(sql);
+		ps.setInt(1, start);
+		ps.setInt(2, end);
+		rs = ps.executeQuery();
+		
+		ArrayList list = new ArrayList();
+		while(rs.next()) {
+			BBSDTO dto = new BBSDTO();
+			
+			dto.setNo(rs.getInt(1));
+			dto.setTitle(rs.getString(2));
+			dto.setContent(rs.getString(3));
+			dto.setWriter(rs.getString(4));
+			dto.setDate(rs.getString(5));
+			dto.setCount(rs.getInt(6));
+			dto.setBlike(rs.getInt(7));
+			dto.setReport(rs.getInt(8));
+			
+			list.add(dto);
+		}
+		
+		pool.freeConnection(con, ps);
+		
+		return list;
+	}
 	
 	public int bbsCount(){
 		  int cnt=0;
