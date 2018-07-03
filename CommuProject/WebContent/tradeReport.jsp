@@ -59,7 +59,7 @@
 					int cnt1 = dao3.tradeRCount();
 					tot1 = cnt1 / size1;
 					if (cnt1 % size1 != 0) {
-						tot++;
+						tot1++;
 					}
 					for (int i = 0; i < tot1; i++) {
 				%> <a href="tradeReport.jsp?pageNum1=<%=i + 1%>">[<%=(i + 1)%>]
@@ -68,6 +68,7 @@
  %>
 				</td>
 			</tr>
+			</table>
 			</center>
 </body>
 </html>
