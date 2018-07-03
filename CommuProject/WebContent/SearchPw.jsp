@@ -7,15 +7,39 @@
 <title>Insert title here</title>
 </head>
 <body>
-
-<form action="/CommuProject/SearchPwExe.jsp">
-아이디를 입력하세요. <input type = "text" name="id"><br>
-이름을 입력하세요. <input type = "text" name="name">
+<table width="<?=$width?>" align="center" cellpadding=0 cellspacing=0
+		style="margin: 0 auto;">
+		<tr>
+			<td>
+				<div id="total">
+					<%@ include file="top.jsp"%>
+					<%@ include file="left.jsp"%>
+					<div id="rightLay">
+					<center>
+					<br>
+					<br>
+					<br>
+					
+					<form action="/CommuProject/SearchPwExe.jsp">
+					<h3>비밀번호 찾기</h3>
+아이디 <input type = "text" name="id"><br>
+이름 <input type = "text" name="name"><br>
 
 <input type = "submit">
+</form>
+</center>
+					</div>
+					
+				</div>
+				
+			</td>
+		</tr>
+	</table>
 
 
 
-</form> 
+
+
+
 </body>
 </html>
