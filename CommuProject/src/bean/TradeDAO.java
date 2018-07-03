@@ -133,7 +133,7 @@ public class TradeDAO {
 		
 		return dto;
 	}
-	public ArrayList select(String writer) throws Exception {
+	public ArrayList<TradeDTO> select(String writer) throws Exception {
 		con = pool.getConnection();
 		
 		String sql = "select * from Trade where writer = ?";
@@ -144,7 +144,7 @@ public class TradeDAO {
 		
 		rs = ps.executeQuery();
 		
-		ArrayList list = new ArrayList();
+		ArrayList<TradeDTO> list = new ArrayList<TradeDTO>();
 		while(rs.next()) {
 			TradeDTO dto = new TradeDTO();
 			
@@ -164,7 +164,7 @@ public class TradeDAO {
 		return list;
 	}
 	
-	public ArrayList selectAll() throws Exception {
+	public ArrayList<TradeDTO> selectAll() throws Exception {
 		con = pool.getConnection();
 		
 		String sql = "select * from trade";
@@ -172,7 +172,7 @@ public class TradeDAO {
 		ps = con.prepareStatement(sql);
 		rs = ps.executeQuery();
 	
-		ArrayList list = new ArrayList();
+		ArrayList<TradeDTO> list = new ArrayList<TradeDTO>();
 		while(rs.next()) {
 			TradeDTO dto = new TradeDTO();
 			
@@ -192,7 +192,7 @@ public class TradeDAO {
 		return list;
 	}
 	
-	public ArrayList selectAll(int start, int end) throws Exception {
+	public ArrayList<TradeDTO> selectAll(int start, int end) throws Exception {
 		con = pool.getConnection();
 		
 		String sql = "select * from trade order by no DESC limit ?,?";
@@ -201,7 +201,7 @@ public class TradeDAO {
 		ps.setInt(2, end);
 		rs = ps.executeQuery();
 		
-		ArrayList list = new ArrayList();
+		ArrayList<TradeDTO> list = new ArrayList<TradeDTO>();
 		while(rs.next()) {
 			TradeDTO dto = new TradeDTO();
 			

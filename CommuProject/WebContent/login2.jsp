@@ -23,12 +23,12 @@
 		SimpleDateFormat sdf = 	new SimpleDateFormat("yyyy-MM-dd");
 	if (pw.equals(dto.getPw())) {
 
-			String id = request.getParameter("id");
-			session.setAttribute("id", id);
+			session.setAttribute("id", id1);	
 		if (!dto.getLast().equals(sdf.format(d))){
-			dao.updatefree(id, 500);
+			
 			dto.setLast(sdf.format(d));
 			dao.update(dto);
+			dao.updatefree(id1, 500);
 			%>
 			<script type="text/javascript">
 			alert("오늘 출석 하셨습니다 +500p");

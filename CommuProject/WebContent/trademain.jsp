@@ -21,7 +21,7 @@
 	</tr>
 	<%
 		TradeDAO dao2 = new TradeDAO();
-		ArrayList list2 = dao2.selectAll(0,5);
+		ArrayList<TradeDTO> list2 = dao2.selectAll(0,5);
 		for(int i = 0 ; i < list2.size() ; i ++){
 			TradeDTO dto = (TradeDTO)list2.get(i);
 	%>
