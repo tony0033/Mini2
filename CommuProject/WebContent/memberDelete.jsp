@@ -8,19 +8,16 @@
 <title>Insert title here</title>
 </head>
 <body>
-
-<jsp:useBean id="dto" class="bean.MemberDTO">
-	<jsp:setProperty name="dto" property="*" />
-</jsp:useBean>
-
 <% 
-MemberDAO dao = new MemberDAO();
-dao.update(dto);
+		String id = request.getParameter("id");
 %>
-<script type="text/javascript">
-	alert("개인정보가 수정되었습니다!");
-	history.go(-2);
-</script>
-
+	<script type="text/javascript">
+		var check = confirm("삭제하시겠습니까?");
+		if(check){
+			location.href="deleteOK.jsp?id=<%=id%>";
+		}else{
+			location.href="memberList.jsp";
+		}
+	</script>
 </body>
 </html>

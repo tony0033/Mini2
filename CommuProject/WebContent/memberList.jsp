@@ -58,7 +58,7 @@
 												<button type="button" onclick="location.href='memberCure.jsp?id=<%=dto1.getId() %>'" >수정</button>	
 											</td>
 											<td align="center" width="50px">
-												<button type="button" onclick="location.href='memberDelete.jsp?id=<%=dto1.getId()%>'">삭제</button>											
+												<button type="button" onclick="location.href='memberDelete.jsp?id=<%=dto1.getId() %>'">삭제</button>											
 											</td>
 										</tr>
 										<%
