@@ -141,7 +141,7 @@ public class MemberDAO {
 		return dto;
 	}
 	
-	public ArrayList selectAll() throws Exception {
+	public ArrayList<MemberDTO> selectAll() throws Exception {
 		con = pool.getConnection();
 		
 		String sql = "select * from member";
@@ -149,7 +149,7 @@ public class MemberDAO {
 		ps = con.prepareStatement(sql);
 		rs = ps.executeQuery();
 	
-		ArrayList list = new ArrayList();
+		ArrayList<MemberDTO> list = new ArrayList<MemberDTO>();
 		while(rs.next()) {
 			MemberDTO dto = new MemberDTO();
 			
@@ -167,7 +167,7 @@ public class MemberDAO {
 		
 		return list;
 	}
-	public ArrayList memberAll() throws Exception {
+	public ArrayList<MemberDTO> memberAll() throws Exception {
 		con = pool.getConnection();
 		
 		String sql = "select * from member order by exp desc";
@@ -175,7 +175,7 @@ public class MemberDAO {
 		ps = con.prepareStatement(sql);
 		rs = ps.executeQuery();
 		
-		ArrayList list = new ArrayList();
+		ArrayList<MemberDTO> list = new ArrayList<MemberDTO>();
 		while(rs.next()) {
 			MemberDTO dto = new MemberDTO();
 			
