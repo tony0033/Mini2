@@ -6,18 +6,48 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
+<link rel="stylesheet" type ="text/css" href ="/CommuProject/css/main.css">
+<style>
+p{
+font-size: 40px;
+color:pink;
+
+
+}
+
+
+</style> 
 </head>
 <body>
-<jsp:useBean id="dto" class="bean.MemberDTO">
-	<jsp:setProperty name="dto" property="*" />
+<jsp:useBean id="dtoN" class="bean.MemberDTO">
+	<jsp:setProperty name="dtoN" property="*" />
 </jsp:useBean>
+
 <%
 	request.setCharacterEncoding("utf-8");
-	 MemberDAO dao = new MemberDAO();
-	dao.insert(dto);
+	 MemberDAO daoN = new MemberDAO();
+	daoN.insert(dtoN);
 %>
-회원가입이 되었습니다.
+<table width="<?=$width?>" align="center" cellpadding=0 cellspacing=0
+		style="margin: 0 auto;">
+		<tr>
+			<td>
+				<div id="total">
+					<%@ include file="/top.jsp"%>
+					<%@ include file="/left.jsp"%>
+					<div id="rightLay">
+					<center><br><br>
+					<p>회원가입을 환영 합니다</p>
+					<a href="main.jsp">로그인 하러 가기 </a>
+					</center>
+					</div>
+				</div>
+				
+			</td>
+		</tr>
+	</table>
 
-<a href="main.jsp">메인으로</a>
+
+
 </body>
 </html>

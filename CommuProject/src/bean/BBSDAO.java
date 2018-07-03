@@ -135,7 +135,7 @@ public class BBSDAO {
 		return dto;
 	}
 	
-	public ArrayList selectAll() throws Exception {
+	public ArrayList<BBSDTO> selectAll() throws Exception {
 		con = pool.getConnection();
 		
 		String sql = "select * from BBS";
@@ -143,7 +143,7 @@ public class BBSDAO {
 		ps = con.prepareStatement(sql);
 		rs = ps.executeQuery();
 	
-		ArrayList list = new ArrayList();
+		ArrayList<BBSDTO> list = new ArrayList<BBSDTO>();
 		while(rs.next()) {
 			BBSDTO dto = new BBSDTO();
 			
@@ -164,7 +164,7 @@ public class BBSDAO {
 		return list;
 	}
 	
-	public ArrayList selectAll(int start, int end) throws Exception {
+	public ArrayList<BBSDTO> selectAll(int start, int end) throws Exception {
 		con = pool.getConnection();
 		
 		String sql = "select * from BBS order by no DESC limit ?,?";
@@ -174,7 +174,7 @@ public class BBSDAO {
 		ps.setInt(2, end);
 		rs = ps.executeQuery();
 		
-		ArrayList list = new ArrayList();
+		ArrayList<BBSDTO> list = new ArrayList<BBSDTO>();
 		while(rs.next()) {
 			BBSDTO dto = new BBSDTO();
 			
@@ -194,7 +194,7 @@ public class BBSDAO {
 		
 		return list;
 	}
-	public ArrayList selectRAll(int start, int end) throws Exception {
+	public ArrayList<BBSDTO> selectRAll(int start, int end) throws Exception {
 		con = pool.getConnection();
 		
 		String sql = "select * from BBS order by report desc limit ?,?";
@@ -204,7 +204,7 @@ public class BBSDAO {
 		ps.setInt(2, end);
 		rs = ps.executeQuery();
 		
-		ArrayList list = new ArrayList();
+		ArrayList<BBSDTO> list = new ArrayList<BBSDTO>();
 		while(rs.next()) {
 			BBSDTO dto = new BBSDTO();
 			
