@@ -1,3 +1,4 @@
+<%@page import="java.text.SimpleDateFormat"%>
 <%@page import="bean.TradeDAO"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="bean.TradeDTO"%>
@@ -63,7 +64,7 @@
 					for (int i = 0; i < tot1; i++) {
 				%> <a href="tradeReport.jsp?pageNum1=<%=i + 1%>">[<%=(i + 1)%>]
 				</a> <%
- 	}
+ 	} 
  %>
 				</td>
 			</tr>
