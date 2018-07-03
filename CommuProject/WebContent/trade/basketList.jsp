@@ -15,6 +15,16 @@
 <body>
 	<%
 		ArrayList<TradeDTO> list = (ArrayList) session.getAttribute("basketlist");
+	if(list==null)
+		%>
+		<script type="text/javascript">
+		alert("장바구니에 아무것도 없습니다");
+		history.back;
+		</script>
+		
+		<% 
+	
+	{
 	%>
 	<table width="<?=$width?>" align="center" cellpadding=0 cellspacing=0
 		style="margin: 0 auto;">
@@ -74,8 +84,8 @@
 												for (int i = 0; i < tot; i++) {
 											%> <a href="tradePage.jsp?pageNum=<%=i + 1%>">[<%=(i + 1)%>]
 										</a> <%
- 	}
- %>
+ 												}
+ 											%>
 										</td>
 
 										<td align="right">

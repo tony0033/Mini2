@@ -85,3 +85,15 @@ button{
 textarea{
 	background-image: url("../img/back.jpeg");
 }
+#menu{
+	font-size: 20px;
+	position: fixed;
+	top: 50%;
+	right: 0%;
+	}
+a:visited{
+	font-style: normal;
+	color: black;
+	font: normal;
+
+}
