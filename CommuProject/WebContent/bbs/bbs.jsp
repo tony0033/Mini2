@@ -47,45 +47,46 @@
 					<%@ include file="/top.jsp"%>
 					<%@ include file="/left.jsp"%>
 					<div id="rightLay">
-						<body>
-							<center>
-								<table border="1">
-									<tr>
-										<td align="center" width="50px">제목</td>
-										<td align="center" width="300px"><%=dtoB.getTitle()%></td>
-									</tr>
-									<tr>
-										<td align="center" width="50px">내용</td>
-										<td align="center" width="300px" height="300px"><%=dtoB.getContent()%></td>
-									</tr>
-								</table>
-								<table>
-									<tr>
-										<td align="right" width="350px">
-											<%
+						<div id="bbs">
+							<body>
+								<center>
+									<table border="1">
+										<tr>
+											<td align="center" width="100px">제목</td>
+											<td align="center" width="350px"><%=dtoB.getTitle()%></td>
+										</tr>
+										<tr>
+											<td align="center" width="100px">내용</td>
+											<td align="center" width="350px" height="350px"><%=dtoB.getContent()%></td>
+										</tr>
+									</table>
+									<table>
+										<tr>
+											<td align="right" width="450px">
+												<%
 												if(session.getAttribute("id") != null){
 												String pid = (String) session.getAttribute("id");
 												if (pid.equals(dtoB.getWriter())) {
 											%>
-											<button type="button"
-												onclick="location.href ='changeBBS.jsp?no=<%=dtoB.getNo()%>'">수정</button>
-											<button type="button" onclick=check();>제거</button>
-										   <%
+												<button type="button"
+													onclick="location.href ='changeBBS.jsp?no=<%=dtoB.getNo()%>'">수정</button>
+												<button type="button" onclick=check();>제거</button> <%
  	} else{
  %>
-											<button type="button" onclick=report();>신고하기</button> 
-											<%
+												<button type="button" onclick=report();>신고하기</button> <%
  	}
  	}
  %>
-											<button type="button"
-												onclick="location.href = 'likeUp.jsp?no=<%=dtoB.getNo()%>';info();">추천하기</button>
-											<button type="button" onclick=history.back();>돌아가기</button>
-										</td>
-									</tr>
-								</table>
-							</center>
-						</body>
+												<button type="button"
+													onclick="location.href = 'likeUp.jsp?no=<%=dtoB.getNo()%>';info();">추천하기</button>
+												<button type="button" onclick=history.back();>돌아가기</button>
+											</td>
+										</tr>
+									</table>
+								</center>
+							</body>
+					<%-- 		<%@ include file="bbsComment.jsp?no=<%=no %>" %> --%>
+						</div>
 					</div>
 				</div>
 				
