@@ -84,8 +84,8 @@
 												for (int i = 0; i < tot; i++) {
 											%> <a href="tradePage.jsp?pageNum=<%=i + 1%>">[<%=(i + 1)%>]
 										</a> <%
- 	}
- %>
+ 												}
+ 											%>
 										</td>
 
 										<td align="right">
