@@ -12,14 +12,14 @@
 </head>
 <body>
 <center>
-<table border = "1">
+<table class ="type1">
 	<tr>
-		<td align = "center" width = "10px">no</td>
-		<td align = "center" width = "300px">제목</td>
-		<td align = "center" width = "100px">작성자</td>
-		<td align = "center" width = "50px">조회수</td>
-		<td align = "center" width = "50px">추천수</td>
-		<td align = "center" width = "100px">날 짜</td>
+		<th align = "center" width = "10px" scope="cols">no</th>
+		<th align = "center" width = "300px" scope="cols">제목</th>
+		<th align = "center" width = "100px" scope="cols">작성자</th>
+		<th align = "center" width = "50px" scope="cols">조회수</th>
+		<th align = "center" width = "50px" scope="cols">추천수</th>
+		<th align = "center" width = "100px" scope="cols">날 짜</th>
 		
 	</tr>
 	<%
@@ -29,7 +29,7 @@
 			BBSDTO dto = (BBSDTO)list1.get(i);
 	%>
 		<tr>
-			<td align = "center" width = "10px"><%= dto.getNo() %></td>
+			<th align = "center" width = "10px" scope="rows"><%= dto.getNo() %></th>
 			<td align = "center" width = "300px"><a href = "bbs/countUp.jsp?no=<%=dto.getNo() %>"><%= dto.getTitle() %></a></td>
 			<td align = "center" width = "100px"><%= dto.getWriter() %></td>
 			<td align = "center" width = "50px"><%= dto.getCount() %></td>
@@ -40,10 +40,11 @@
 		}
 	%>
 </table>
-<table width = "630px">
+<table width = "700px">
 	<tr>
 		<td align = "right">
 			<button type = "button" onclick = "location.href = 'bbs/idCheck.jsp'">작성</button>
+			<button type = "button" onclick = "location.href = 'bbs/bbsPage.jsp'">전체목록</button>
 		</td>
 	</tr>
 </table>

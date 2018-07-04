@@ -21,14 +21,15 @@
 					<div id="rightLay">
 
 						<div id="bbs">
+							<img src =../img/trade.png id = "picture">
 							<center>
-							<table border="1">
+							<table class="type1">
 								<tr>
-									<td align="center" width="10px">no</td>
-									<td align="center" width="225px">이 름</td>
-									<td align="center" width="225px">가 격</td>
-									<td align="center" width="100px">작성자</td>
-									<td align="center" width="50px">조회수</td>
+									<th align="center" width="10px"scope="cols">no</th>
+									<th align="center" width="225px"scope="cols">이 름</th>
+									<th align="center" width="225px"scope="cols">가 격</th>
+									<th align="center" width="100px"scope="cols">작성자</th>
+									<th align="center" width="50px"scope="cols">조회수</th>
 								</tr>
 								<%
 									TradeDAO dao3 = new TradeDAO();
@@ -45,7 +46,7 @@
 										TradeDTO dto = (TradeDTO) list.get(i);
 								%>
 								<tr>
-									<td align="center" width="10px"><%=dto.getNo()%></td>
+									<th align="center" width="10px"scope="rows"><%=dto.getNo()%></th>
 									<td align="center" width="225px"><a
 										href="tCountUp.jsp?no=<%=dto.getNo()%>"><%=dto.getName()%></a></td>
 									<td align="center" width="125px"><%=dto.getPrice()%></td>
@@ -56,7 +57,7 @@
 									}
 								%>
 							</table>
-							<table width="630px">
+							<table width="700px">
 								<tr>
 									<td align="center">
 										<%
@@ -74,7 +75,7 @@
  %>
 									</td>
 
-									<td align="right">
+									<td align="right" width = "50px">
 										<button type="button" onclick="location.href = 'idCheck.jsp'">등록</button>
 									</td>
 								</tr>

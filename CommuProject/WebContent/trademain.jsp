@@ -11,13 +11,13 @@
 </head>
 <body>
 <center>
-<table border = "1">
+<table class="type1">
 	<tr>
-		<td align = "center" width = "10px">no</td>
-		<td align = "center" width = "225px">이 름</td>
-		<td align = "center" width = "225px">가 격</td>
-		<td align = "center" width = "100px">작성자</td>
-		<td align = "center" width = "50px">조회수</td>
+		<th align = "center" width = "10px" scope="cols">no</th>
+		<th align = "center" width = "225px"scope="cols">이 름</th>
+		<th align = "center" width = "225px"scope="cols">가 격</th>
+		<th align = "center" width = "100px"scope="cols">작성자</th>
+		<th align = "center" width = "50px"scope="cols">조회수</th>
 	</tr>
 	<%
 		TradeDAO dao2 = new TradeDAO();
@@ -26,7 +26,7 @@
 			TradeDTO dto = (TradeDTO)list2.get(i);
 	%>
 		<tr>
-			<td align = "center" width = "10px"><%= dto.getNo() %></td>
+			<th align = "center" width = "10px"scope="rows"><%= dto.getNo() %></th>
 			<td align = "center" width = "225px"><a href = "trade/tCountUp.jsp?no=<%=dto.getNo() %>"><%=dto.getName() %></a></td>
 			<td align = "center" width = "125px"><%=dto.getPrice() %></td>
 			<td align = "center" width = "100px"><%=dto.getWriter() %></td>
@@ -36,7 +36,7 @@
 		}
 	%>
 </table>
-<table width = "630px">
+<table width = "700px">
 	<tr>
 		<td align = "right">
 			<button type = "button" onclick = "location.href = 'trade/idCheck.jsp'">등록</button>

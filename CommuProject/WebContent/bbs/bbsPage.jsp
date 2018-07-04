@@ -32,15 +32,16 @@
 					<%@ include file="../left.jsp"%>
 					<div id="rightLay">
 						<div id="bbs">
+								<img src =../img/bbs.png id = "picture">
 								<center>
-									<table border="1">
+									<table class="type1">
 										<tr>
-											<td align="center" width="10px">no</td>
-											<td align="center" width="300px">제목</td>
-											<td align="center" width="100px">작성자</td>
-											<td align="center" width="50px">조회수</td>
-											<td align="center" width="50px">추천수</td>
-											<td align="center" width="100px">날 짜</td>
+											<th align="center" width="10px" scope="cols">no</th>
+											<th align="center" width="300px"scope="cols">제목</th>
+											<th align="center" width="100px"scope="cols">작성자</th>
+											<th align="center" width="50px"scope="cols">조회수</th>
+											<th align="center" width="50px"scope="cols">추천수</th>
+											<th align="center" width="100px"scope="cols">날 짜</th>
 
 										</tr>
 										<%
@@ -59,7 +60,7 @@
 												BBSDTO dto1 = (BBSDTO) list.get(i);
 										%>
 										<tr>
-											<td align="center" width="10px"><%=dto1.getNo()%></td>
+											<th align="center" width="10px"scope="rows"><%=dto1.getNo()%></th>
 											<td align="center" width="300px"><a
 												href="countUp.jsp?no=<%=dto1.getNo()%>"><%=dto1.getTitle()%></a>
 											</td>
@@ -72,7 +73,7 @@
 											}
 										%>
 									</table>
-									<table width="630px">
+									<table width="700px">
 										<tr>
 											<td align="center">
 												<%
@@ -89,7 +90,7 @@
  	}
  %>
 											</td>
-											<td align="right">
+											<td align="right" width="50px">
 												<%
 													String pid = (String) session.getAttribute("id");
 												%>

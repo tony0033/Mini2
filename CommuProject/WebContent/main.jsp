@@ -19,7 +19,6 @@ var s;
 				<div id="total">
 					<jsp:include page="top.jsp"/>
 					<jsp:include page="left.jsp"/>
-					
 					<div id="rightLay">
 						<%if(session.getAttribute("id") != null){
 							if(session.getAttribute("id").equals("admin")){
