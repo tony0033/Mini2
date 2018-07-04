@@ -16,6 +16,6 @@ MemberDAO daoR = new MemberDAO();
 daoR.updatefree(idR, a);
 
 %>
-<jsp:forward page="Rock.jsp"></jsp:forward>
+<jsp:forward page="main.jsp"></jsp:forward>
 </body>
 </html>

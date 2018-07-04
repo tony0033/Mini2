@@ -97,7 +97,7 @@ function doDisplay(){
 
 </script>
 <style type="text/css">
-img{
+#roll{
 border: 1px solid gray;
 display: block;
 margin: auto;
