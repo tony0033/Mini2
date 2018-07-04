@@ -7,13 +7,12 @@ table.type1 {
     border-left: 1px solid #ccc;
     margin: 20px 10px;
 }
-
 table.type1 thead th {
     padding: 10px;
     font-weight: bold;
     border-top: 1px solid #ccc;
     border-right: 1px solid #ccc;
-    border-bottom: 2px solid #c00;
+    /* border-bottom: 2px solid #c00; */
     background: #baf298;
 }
 table.type1 tbody th {
@@ -26,10 +25,42 @@ table.type1 tbody th {
 }
 table.type1 td {
     padding: 10px;
+   /*  vertical-align: top; */
+    border-right: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+}
+table.type2 {
+    border-collapse: collapse;
+    text-align: left;
+    line-height: 1.5;
+    border-left: 1px solid #ccc;
+    margin: 20px 10px;
+}
+table.type2 thead th {
+    padding: 10px;
+    font-weight: bold;
+    border-top: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+    border-bottom: 2px solid #ccc;
+    background: #fff772;
+}
+table.type2 tbody th {
+    padding: 10px;
+    font-weight: bold;
+    vertical-align: top;
+    border-right: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    background: #fff772;
+}
+table.type2 td {
+    padding: 10px;
     vertical-align: top;
     border-right: 1px solid #ccc;
     border-bottom: 1px solid #ccc;
 }
+
+
+
 
 body {
 	background-image: url("../img/back.jpeg");
@@ -63,9 +94,10 @@ body {
 }
 #login {
 	width: 300px;
-	height: 150px;
-	padding-left: 30px;
-	paddint-top:30px;
+	/* height: 150px; */
+	/* padding-left: 30px; */
+	/* padding-top:10px; */
+	padding-bottom:30px;
 }
 #game {
 	width: 300px;
@@ -122,12 +154,14 @@ padding-top:50px;
 button{
 	background-image: url("../img/back.jpeg");
 }
-input:submit{
+#submit{
 	background-image: url("../img/back.jpeg");
 }
-textarea{
-	background-image: url("../img/back.jpeg");
+
+#messageWindow{
+	background-color:#eff2ed
 }
+
 #menu{
 	font-size: 20px;
 	position: fixed;

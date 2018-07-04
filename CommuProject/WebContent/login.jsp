@@ -7,28 +7,25 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
-<style type="text/css">
-#fx {
-	width: 300px;
-	height: 150px;
-}
-</style>
 </head>
 <body>
-
 	<%
 		MemberDAO dao = new MemberDAO();
 
 		if (session.getAttribute("id") == null) {
 	%>
-	<div id="fx">
-		<form action="/CommuProject/login2.jsp">
 
-			<table>
+		<form action="/CommuProject/login2.jsp">
+			<table class="type1">
+				<thead>
+				<tr>
+					<th colspan="2">로그인</th> 
+				</tr>
+				</thead>
 				<tr>
 					<td><input type="text" name="id" value="아이디"
 						onfocus="this.value=''"></td>
-					<td rowspan="2"><input type="submit" value="로그인"></td>
+					<td rowspan="2" valign="center"><input type="submit" value="로그인"></td>
 				</tr>
 				<tr>
 					<td><input type="text" name="pw" value="비밀번호"
@@ -36,33 +33,35 @@
 				</tr>
 			</table>
 		</form>
-
+		<center>
 		<table>
 			<tr>
 				<td><a href=/CommuProject/join.jsp target="_blank">회원가입</a></td>
 				<td><a href="/CommuProject/SearchPw.jsp">비밀번호 찾기</a></td>
 			</tr>
 		</table>
-		</div>
+		</center>
 
 	<%
 		} else {
 			String id1 = (String)session.getAttribute("id");
 			MemberDTO dto = dao.select(id1);
 	%>
-
-	<%=session.getAttribute("id")%>님 환영합니다.
-	<br> 유료포인트:<%=dto.getPay()%><br> 기본포인트:<%=dto.getFree()%><br>
-	신고 횟수:<%=dto.getExp()%><br>
-
-	<a href="http://localhost:8888/CommuProject/logout.jsp">로그아웃</a>
-
-	<a href="MemberInfo.jsp?id=<%=dto.getId()%>">개인정보변경</a>
-
+	<table class="type1" width="250px">
+	<thead>
+		<th><%=session.getAttribute("id")%>님 환영합니다. 
+			<a href="CommuProject/logout.jsp">로그아웃</a>
+		</th>
+	</thead>
+	<tbody>
+		<tr><td>유료포인트:<%=dto.getPay()%><br> 
+		기본포인트:<%=dto.getFree()%><br>
+		신고 횟수:<%=dto.getExp()%></td></tr>
+	</tbody>
+	</table>
 	<%
 		}
 	%>
-
 
 
 

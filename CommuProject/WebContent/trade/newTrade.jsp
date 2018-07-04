@@ -32,7 +32,7 @@
 	<table>
 	<tr>
 		<td align="right" width="160px">
-			<input type = "submit" value = "등록">
+			<input type = "submit" id="submit" value = "등록">
 			<button type = "button" onclick = "location.href = 'tradePage.jsp'">돌아가기</button>
 		</td>
 	</tr>

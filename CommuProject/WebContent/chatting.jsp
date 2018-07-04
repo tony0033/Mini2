@@ -19,7 +19,7 @@ if (chatId==null){
 	chatId = session.getId().substring(0, 6);
 }
 %>
-	<fieldset align = "center">
+	<fieldset align = "center" bgcolor="#baf298">
 		<textarea id="messageWindow" rows="10" cols="28" readonly="readonly" ></textarea>
 		<br> <input id="inputMessage" type="text" /> 
 		<input type="submit" value="send" onclick="send()" />

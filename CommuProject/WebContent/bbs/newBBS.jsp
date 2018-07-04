@@ -33,7 +33,7 @@
 										</table>
 										<table>
 											<tr>
-												<td align="right" width="200px"><input type="submit"value="작성">
+												<td align="right" width="200px"><input type="submit" id="submit"value="작성">
 													<button type="button" onclick="location.href = 'bbsPage.jsp'">돌아가기</button>
 												</td>
 											</tr>

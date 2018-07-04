@@ -23,32 +23,42 @@ color:red;
 											<center>
 						<form action="join2.jsp" method="post">
 						<br>
-						<h2>회원가입</h2>
-							<table border="1"> 
+						
+							<table class="type2"> 
+							<thead>
+								<tr>
+									<th colspan="3" align = "center">회원가입</th>
+								</tr>
+							</thead>
+							<tbody>
 								<tr align="center">
-									<td>아이디:</td> 
+									<th scope="rows">아이디:</th> 
 									<td><input type="text" name="id" onkeyup=checkID()></td>
 									<td width=200px;><div id="idcheck"></div> </td>
 								</tr>
 								<tr align="center">
-									<td>비밀번호: </td>
+									<th scope="rows">비밀번호: </th>
 									<td><input type="password" name="pw" onkeyup=check()></td>
 									<td></td>
 								</tr>
 								<tr align="center">
-									<td>비밀번호 확인: </td>
+									<th scope="rows">비밀번호 확인: </th>
 									<td><input type = "password" name="pw2" onkeyup=check()></td>
 									<td><div id ="check"></div></td>
 									
 								</tr>
 								<tr align="center">
-									<td>이름: </td>
+									<th scope="rows">이름: </th>
 									<td> <input type="text" name="name"> </td>
 									<td> </td>
 								</tr>
 								<tr align="center">
-									<td colspan="3"><input type="submit" value="회원가입"></td>
+									<td colspan="3">
+										<input type="submit" id="submit" value="회원가입">
+										<button type="button" onclick="history.go(-1);">돌아가기</button>
+									</td>
 								</tr>
+								</tbody>
 								</table>
 								
 								</form>
