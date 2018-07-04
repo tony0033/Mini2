@@ -6,7 +6,6 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
-<<<<<<< HEAD
 <style type="text/css">
 #check{
 color:red;
@@ -89,50 +88,6 @@ color:red;
 		
 	}
 	</script>
-=======
 </head>
 <body>
-<body>
-	<table width="<?=$width?>" align="center" cellpadding=0 cellspacing=0
-		style="margin: 0 auto;">
-		<tr>
-			<td>
-				<div id="total">
-					<%@ include file="top.jsp"%>
-					<div id = "rightray">
-						<form action="join2.jsp" method="post">
-						<center>
-						<br>
-						<h2>회원가입</h2>
-							<table>
-								<tr>
-									<td>아이디: <input type="text" name="id">
-									</td>
-								</tr>
-								<tr>
-									<td>비밀번호: <input type="text" name="pw">
-									</td>
-								</tr>
-								<tr>
-									<td>이름: <input type="text" name="name">
-									</td>
-								</tr>
-								<tr>
-									<td><input type="submit" value="회원가입"></td>
-								</tr>
-								</table>
-								</center>
-								</form>
-								
-								</div>
-								
-	</div>
-	
-			</td>
-		</tr>
-	</table>
-	
-	
->>>>>>> refs/remotes/origin/master
-</body>
 </html>
