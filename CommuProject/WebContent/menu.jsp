@@ -13,7 +13,7 @@
 
 <body>
 <%
-String id = (String)session.getAttribute("id");
+String idM = (String)session.getAttribute("id");
 
 %>
 <div id = "menu">
@@ -26,11 +26,11 @@ String id = (String)session.getAttribute("id");
 					<a href = "/CommuProject/main.jsp"> 메 인 </a><br>
 					<a href = "/CommuProject/bbs/bbsPage.jsp">게시판</a><br>
 					<a href = "/CommuProject/trade/tradePage.jsp">거래소</a><br>
-					<%if(id!=null){
+					<%if(idM!=null){
 						%>
 						<a href = "/CommuProject/trade/basketList.jsp">장바구니</a><br>
 						<%
-					if(id.equals("admin")){
+					if(idM.equals("admin")){
 						%><a href = "/CommuProject/reportList">관리자페이지</a><br><br>
 						
 						<%
