@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 /build/
 META-INF/
 /.settings/
@@ -18,3 +19,16 @@ META-INF/
 >>>>>>> refs/remotes/origin/master
 META-INF
 >>>>>>> branch 'master' of https://github.com/tony0033/Mini2.git
+=======
+/build/
+.classpath
+.settings/
+.project
+=======
+/build/
+.classpath
+.settings/
+.project
+>>>>>>> refs/remotes/origin/master
+META-INF
+>>>>>>> refs/remotes/origin/master
