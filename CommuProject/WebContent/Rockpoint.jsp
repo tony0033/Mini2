@@ -9,13 +9,56 @@
 </head>
 <body>
 <%
+int rock = Integer.parseInt(request.getParameter("rock"));
 String idR = (String) session.getAttribute("id");
-String point = (String)request.getParameter("point");
-int a = Integer.parseInt(point);
+int ran =  Integer.parseInt(request.getParameter("ran"));
+int a =0;
 MemberDAO daoR = new MemberDAO();
+if(rock==1){
+	if(ran ==1){
+		out.print("<img src = 'img/roll1.jpg'> 졌습니다.(-500p)");
+		 a = -500;
+		}
+		else if (ran == 2){
+			out.print("<img src = 'img/roll2.jpg'> 이겼습니다!!(+500p)");
+			 a = 500;
+		}
+		else {
+			out.print("<img src = 'img/roll3.jpg'> 비겼습니다(+0p)");
+			 a = 0;
+		}
+}
+	else if (rock==2){
+		if(ran == 1){
+		out.print("<img src = 'img/roll1.jpg'> 비겼습니다(+0p)");
+		 a = 0;
+		}
+		else if (ran == 2){
+			out.print("<img src = 'img/roll2.jpg'> 이겼습니다!!(+500p)");
+			 a = 500;
+		}
+		else {
+			out.print("<img src = 'img/roll3.jpg'> 졌습니다.(-500p)");
+			 a = -500;
+		}
+}
+	else {
+		if(ran == 1){
+		out.print("<img src = 'img/roll1.jpg'> 이겼습니다!!(+500p)");
+		 a = 500;
+		}
+		else if (ran == 2){
+			out.print("<img src = 'img/roll2.jpg'> 비겼습니다(+0p)");
+			 a = 0;
+		}
+		else {
+			out.print("<img src = 'img/roll3.jpg'> 졌습니다.(-500p)");
+			 a = -500;
+		}
+}
 daoR.updatefree(idR, a);
 
 %>
-<jsp:forward page="main.jsp"></jsp:forward>
+
 </body>
 </html>
