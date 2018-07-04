@@ -55,7 +55,6 @@ color:red;
 								<tr align="center">
 									<td colspan="3">
 										<input type="submit" id="submit" value="회원가입">
-										<button type="button" onclick="history.go(-1);">돌아가기</button>
 									</td>
 								</tr>
 								</tbody>

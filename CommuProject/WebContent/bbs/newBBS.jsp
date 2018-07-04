@@ -20,23 +20,26 @@
 							<body>
 								<center>
 									<form action="inputBBS.jsp">
-										<table>
+										<table class="type2">
+											<tbody>
 											<tr>
-												<td width="50px" align="center">제목</td>
-												<td width="150px"><input type="text" name="title"></td>
+												<th width="100px" align="center" scope="rows">제목</th>
+												<td width="250px"><textarea rows="1" cols="60"style="resize: none;" name = "title"></textarea></td>
 											</tr>
 											<tr>
-												<td width="50px" align="center">내용</td>
-												<td width="150px"><textarea rows="10" cols="22" name = "content"></textarea>
+												<th width="100px" align="center" scope="rows">내용</th>
+												<td width="250px"><textarea rows="20" cols="60"style="resize: none;" name = "content"></textarea>
 												</td>
 											</tr>
 										</table>
 										<table>
 											<tr>
-												<td align="right" width="200px"><input type="submit" id="submit"value="작성">
+												<td align="right" width="500px">
+													<input type="submit" id="submit"value="작성">
 													<button type="button" onclick="location.href = 'bbsPage.jsp'">돌아가기</button>
 												</td>
 											</tr>
+										</tbody>
 										</table>
 									</form>
 								</center>

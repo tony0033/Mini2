@@ -18,7 +18,8 @@ table.type1 thead th {
 table.type1 tbody th {
     padding: 10px;
     font-weight: bold;
-    vertical-align: top;
+    vertical-align: middle;
+    border-top: 1px solid #ccc;
     border-right: 1px solid #ccc;
     border-bottom: 1px solid #ccc;
     background: #baf298;
@@ -26,6 +27,7 @@ table.type1 tbody th {
 table.type1 td {
     padding: 10px;
    /*  vertical-align: top; */
+    border-top: 1px solid #ccc;
     border-right: 1px solid #ccc;
     border-bottom: 1px solid #ccc;
 }
@@ -47,7 +49,8 @@ table.type2 thead th {
 table.type2 tbody th {
     padding: 10px;
     font-weight: bold;
-    vertical-align: top;
+    vertical-align: middle;
+    border-top: 1px solid #ccc;
     border-right: 1px solid #ccc;
     border-bottom: 1px solid #ccc;
     background: #fff772;
@@ -55,6 +58,7 @@ table.type2 tbody th {
 table.type2 td {
     padding: 10px;
     vertical-align: top;
+    border-top: 1px solid #ccc;
     border-right: 1px solid #ccc;
     border-bottom: 1px solid #ccc;
 }
@@ -123,7 +127,7 @@ body {
 padding-top:50px;
 	float:  right;
 	width: 800px;
-	height: 400px;
+	height: 450px;
 }
 #report{
 padding-top:50px;

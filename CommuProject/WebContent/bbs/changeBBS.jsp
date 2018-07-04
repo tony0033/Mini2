@@ -26,15 +26,15 @@
 							<center>
 								<form action="change.jsp">
 									<input name="no" value=<%=dtoB.getNo()%> type="hidden">
-									<table border="1">
+									<table class="type2">
 										<tr>
-											<td align="center" width="50px">제목</td>
-											<td align="center" width="300px"><textarea rows="1"
-													cols="42" style="resize: none;" name="title"><%=dtoB.getTitle()%></textarea>
+											<th align="center" width="50px" scope="rows">제목</th>
+											<td align="center" width="300px">
+											<textarea rows="1" cols="42" style="resize: none;" name="title"><%=dtoB.getTitle()%></textarea>
 											</td>
 										</tr>
 										<tr>
-											<td align="center" width="50px">내용</td>
+											<th align="center" width="50px" scope="rows">내용</th>
 											<td align="center" width="300px" height="300px"><textarea
 													rows="20" cols="42" style="resize: none;" name="content"><%=dtoB.getContent()%></textarea>
 											</td>
@@ -42,8 +42,8 @@
 									</table>
 									<table>
 										<tr>
-											<td align="right" width="200px"><input type="submit"
-												value="수정완료">
+											<td align="right" width="200px">
+												<input type="submit" id="submit" value="수정완료">
 												<button type="button"
 													onclick="location.href ='bbs.jsp?no=<%=dtoB.getNo()%>'">돌아가기</button>
 											</td>
