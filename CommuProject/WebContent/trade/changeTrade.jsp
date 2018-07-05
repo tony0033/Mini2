@@ -27,21 +27,21 @@
 						<center>
 							<form action="tChange.jsp">
 								<input name="no" value=<%=dto1.getNo()%> type="hidden">
-								<table border="1">
+								<table class="type2">
 									<tr>
-										<td align="center" width="70px">제품이름</td>
+										<th align="center" width="70px">제품이름</th>
 										<td align="center" width="280px"><input type="text"
 											name="name" value=<%=dto1.getName()%>></td>
 									</tr>
 									<tr>
-										<td align="center" width="70px">가격</td>
+										<th align="center" width="70px">가격</th>
 										<td align="center" width="280px"><input type="text"
 											name="price" value=<%=dto1.getPrice()%>></td>
 									</tr>
 								</table>
 								<table>
 									<tr>
-										<td align="right" width="160px"><input type="submit"
+										<td align="right" width="160px"><input type="submit" id="submit"
 											value="수정완료">
 											<button type="button"
 												onclick="location.href = 'trade.jsp?no=<%=dto1.getNo()%>'">돌아가기</button>

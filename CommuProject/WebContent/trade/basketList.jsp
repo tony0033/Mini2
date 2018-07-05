@@ -37,14 +37,16 @@
 
 						<div id="bbs">
 							<center>
-								<table border="1">
+								<table class="type1">
+									<thead>
 									<tr>
-										<td align="center" width="10px">no</td>
-										<td align="center" width="225px">이 름</td>
-										<td align="center" width="225px">가 격</td>
-										<td align="center" width="100px">작성자</td>
-										<td align="center" width="50px">조회수</td>
+										<th align="center" width="10px">no</th>
+										<th align="center" width="225px">이 름</th>
+										<th align="center" width="225px">가 격</th>
+										<th align="center" width="100px">작성자</th>
+										<th align="center" width="50px">조회수</th>
 									</tr>
+									</thead>
 									<%
 										TradeDAO dao3 = new TradeDAO();
 										int pageNum;
@@ -58,8 +60,9 @@
 										for (int i = 0; i < list.size(); i++) {
 											TradeDTO dto = (TradeDTO) list.get(i);
 									%>
+									<tbody>
 									<tr>
-										<td align="center" width="10px"><%=dto.getNo()%></td>
+										<th align="center" width="10px"><%=dto.getNo()%></th>
 										<td align="center" width="225px"><a
 											href="tCountUp.jsp?no=<%=dto.getNo()%>"><%=dto.getName()%></a></td>
 										<td align="center" width="125px"><%=dto.getPrice()%></td>
@@ -69,6 +72,7 @@
 									<%
 										}
 									%>
+									</tbody>
 								</table>
 								<table width="630px">
 									<tr>
@@ -89,7 +93,7 @@
 										
 										</td>
 
-										<td align="right">
+										<td align="right" width="50px">
 											<button type="button" onclick="location.href = 'idCheck.jsp'">등록</button>
 										</td>
 									</tr>

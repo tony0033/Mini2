@@ -20,7 +20,7 @@
       <jsp:setProperty name = "dtoF" property = "*" />
       </jsp:useBean>
 	<%
-	String realFolder = "C:/Users/user/git/CommuProject/WebContent/img";
+	String realFolder = "C:/Users/lsg01/git1/CommuProject/WebContent/img";
 	 String filename1 = "";
 	 int maxSize = 1024*1024*5;
 	 String encType = "euc-kr";

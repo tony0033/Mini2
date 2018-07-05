@@ -50,21 +50,21 @@
 						</script>
 
 						<center>
-							<table border="1">
+							<table class="type2">
 								<tr>
-									<td align="center" width="70px">제품이름</td>
+									<th align="center" width="70px">제품이름</th>
 									<td align="center" width="280px"><%=dtoT.getName()%></td>
 								</tr>
 								<tr>
-									<td align="center" width="70px">가격</td>
+									<th align="center" width="70px">가격</th>
 									<td align="center" width="280px"><%=dtoT.getPrice()%></td>
 								</tr>
 								<tr>
-									<td align="center" width="70px">내용</td>
+									<th align="center" width="70px">내용</th>
 									<td align="center" width="70px"><%=dtoT.getContent()%></td>
 								</tr>
 								<tr>
-									<td align="center" width="70px">판매현황</td>
+									<th align="center" width="70px">판매현황</th>
 									<%
 										if (dtoT.getStatus() == 0) {
 									%>
@@ -84,13 +84,12 @@
 							</table>
 							<table>
 								<tr>
-									<td align="right" width="350px"><%
+									<td align="right" width="600px"><%
 										if (session.getAttribute("id") != null) {
 												String pid = (String) session.getAttribute("id");
 												if (pid.equals(dtoT.getWriter())) {
 												if (dtoT.getStatus() == 0) {
 									%>
-													<button type="button" onclick="location.href ='changeTrade.jsp?no=<%=dtoT.getNo()%>'">수정</button>
 													<button type="button" onclick=check();>제거</button> 
 									<%
  										} else if(dtoT.getStatus() ==1){
