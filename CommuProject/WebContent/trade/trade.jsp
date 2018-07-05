@@ -52,7 +52,7 @@
 						<center>
 							<table border="1">
 								<tr>
-									<td align="center" width="70px">제품이름></td>
+									<td align="center" width="70px">제품이름</td>
 									<td align="center" width="280px"><%=dtoT.getName()%></td>
 								</tr>
 								<tr>
