@@ -18,7 +18,7 @@
 					<div id="rightLay">
 						<div id="trade">
 							<center>
-<form action = "inputTrade.jsp">
+<form method="post" enctype="multipart/form-data" action = "inputTrade.jsp">
 	<table border = "1">
 		<tr>
 			<td align = "center" width = "70px">제품이름</td>
@@ -28,14 +28,22 @@
 			<td align = "center" width = "70px">가격</td>
 			<td align = "center" width = "280px"><input type="text" name="price"></td>
 		</tr>
+		<tr>
+		<td align = "center" width = "70px">내용</td>
+		<td align = "center" width = "280px"><textarea cols="30" rows="10" name="content"> </textarea></td>
+		</tr>
 	</table>
 	<table>
 	<tr>
 		<td align="right" width="160px">
+		이미지<input type="file" name="filename1" size=40>
 			<input type = "submit" id="submit" value = "등록">
+			
 			<button type = "button" onclick = "location.href = 'tradePage.jsp'">돌아가기</button>
+			
 		</td>
 	</tr>
+	
 </table>
 </form>
 </center>

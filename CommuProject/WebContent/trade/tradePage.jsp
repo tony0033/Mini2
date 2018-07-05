@@ -26,12 +26,18 @@
 							<table class="type1">
 								<tr>
 									<th align="center" width="10px"scope="cols">no</th>
-									<th align="center" width="225px"scope="cols">이 름</th>
-									<th align="center" width="225px"scope="cols">가 격</th>
+									<th align="center" width="110px"scope="cols">사진</th>
+									<th align="center" width="200px"scope="cols">이 름</th>
+									<th align="center" width="125px"scope="cols">가 격</th>
 									<th align="center" width="100px"scope="cols">작성자</th>
-									<th align="center" width="50px"scope="cols">조회수</th>
+									<th align="center" width="80px"scope="cols">조회수</th>
 								</tr>
 								<%
+								String imgthum = null;
+								String imgthum1 = null;
+								String imgthum2 = null;
+								String imgc= null;
+								int endd=0;
 									TradeDAO dao3 = new TradeDAO();
 									int pageNum;
 									if (request.getParameter("pageNum") == null) {
@@ -44,14 +50,21 @@
 									ArrayList list = dao3.selectAll(start, end);
 									for (int i = 0; i < list.size(); i++) {
 										TradeDTO dto = (TradeDTO) list.get(i);
+										imgc = dto.getContent();
+										endd = imgc.indexOf(".");
+										imgthum1 = imgc.substring(11,29);
+										imgthum2 = imgc.substring(29,(endd+4));
+										imgthum = imgthum1 + "thum_"+ imgthum2;
+										imgthum.trim();
 								%>
 								<tr>
 									<th align="center" width="10px"scope="rows"><%=dto.getNo()%></th>
-									<td align="center" width="225px"><a
+									<td align="center" width="110px"><img src=<%=imgthum %>></td>
+									<td align="center" width="200px"><a
 										href="tCountUp.jsp?no=<%=dto.getNo()%>"><%=dto.getName()%></a></td>
 									<td align="center" width="125px"><%=dto.getPrice()%></td>
 									<td align="center" width="100px"><%=dto.getWriter()%></td>
-									<td align="center" width="50px"><%=dto.getCount()%></td>
+									<td align="center" width="80px"><%=dto.getCount()%></td>
 								</tr>
 								<%
 									}

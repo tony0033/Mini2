@@ -22,7 +22,15 @@
 							int no = Integer.parseInt(request.getParameter("no"));
 							TradeDAO daoT = new TradeDAO();
 							TradeDTO dtoT = daoT.select(no);
+							String imgc = dtoT.getContent();
+							int endd = imgc.indexOf(".");
+							String imgthum1 = imgc.substring(11,29);
+							String imgthum2 = imgc.substring(29,endd+4);
+							String imgthum = imgthum1 + "thum_"+ imgthum2;
+							
+							imgthum.trim();
 						%>
+						
 						<script type="text/javascript">
 							function info(){
 								alert("추천하기 완료!");
@@ -50,12 +58,16 @@
 						<center>
 							<table border="1">
 								<tr>
-									<td align="center" width="70px">제품이름</td>
+									<td align="center" width="70px">제품이름 <img src="<%=imgthum %>"></td>
 									<td align="center" width="280px"><%=dtoT.getName()%></td>
 								</tr>
 								<tr>
 									<td align="center" width="70px">가격</td>
 									<td align="center" width="280px"><%=dtoT.getPrice()%></td>
+								</tr>
+								<tr>
+									<td align="center" width="70px">내용</td>
+									<td align="center" width="70px"><%=dtoT.getContent()%></td>
 								</tr>
 								<tr>
 									<td align="center" width="70px">판매현황</td>

@@ -10,7 +10,7 @@
 <% session.invalidate();%>
 <script type="text/javascript">
 alert("로그아웃 되었습니다.");
-location.href="http://localhost:8888/CommuProject/main.jsp"
+location.href="/CommuProject/main.jsp"
 </script>
 </body>
 </html>
