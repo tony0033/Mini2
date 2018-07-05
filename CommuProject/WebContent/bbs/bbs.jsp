@@ -52,13 +52,13 @@
 					<div id="rightLay">
 						<div id="bbs">
 						<center>
-									<table border="1">
+									<table class="type1">
 										<tr>
-											<td align="center" width="100px">제목</td>
+											<th align="center" width="100px" scope="rows">제목</th>
 											<td align="center" width="350px"><%=dtoB.getTitle()%></td>
 										</tr>
 										<tr>
-											<td align="center" width="100px">내용</td>
+											<th align="center" width="100px" scope="rows">내용</th>
 											<td align="center" width="350px" height="300px"><%=dtoB.getContent()%></td>
 										</tr>
 									</table><br>
@@ -90,13 +90,16 @@
 							<div id = "comment">
 						
 							<center>
-								<table width="500px" border="1">
+								<table class="type1">
+									<thead>
 									<tr>
-										<td width=100px; align = "center">작성자</td>
-										<td width=300px; align = "center">내용</td>
-										<td width=100px; align = "center">날짜</td>
+										<th width=100px; align = "center" scope="cols">작성자</th>
+										<th width=300px; align = "center"scope="cols">내용</th>
+										<th width=100px; align = "center"scope="cols">날짜</th>
 									</tr>
-									<%
+									</thead>
+									<tbody>							
+								 	<%
 										CommentDAO daoC = new CommentDAO();
 										ArrayList listC = daoC.select(no);
 
@@ -112,6 +115,8 @@
 									<%
 										}
 									%>
+									</tbody>
+									
 								</table><br>
 									<%
 										if (session.getAttribute("id") != null) {

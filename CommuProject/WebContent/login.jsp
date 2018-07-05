@@ -50,7 +50,7 @@
 	<table class="type1" width="250px">
 	<thead>
 		<th><%=session.getAttribute("id")%>님 환영합니다. 
-			<a href="CommuProject/logout.jsp">로그아웃</a>
+			<a href="/CommuProject/logout.jsp">로그아웃</a>
 		</th>
 	</thead>
 	<tbody>
