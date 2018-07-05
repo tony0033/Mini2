@@ -18,14 +18,14 @@ public class TradeDAO {
 	public void insert(TradeDTO dto) throws Exception {
 		con = pool.getConnection();
 		
-		String sql = "insert into trade (name, price, writer, count, status,report) values(?,?,?,0,0,0)";
+		String sql = "insert into trade (name, price, writer,content, count, status,report) values(?,?,?,?,0,0,0)";
 		
 		ps = con.prepareStatement(sql);
 		
 		ps.setString(1, dto.getName());
 		ps.setString(2, dto.getPrice());
 		ps.setString(3, dto.getWriter());
-	
+		ps.setString(4, dto.getContent());
 		ps.executeUpdate();
 		
 		pool.freeConnection(con, ps);
@@ -34,13 +34,14 @@ public class TradeDAO {
 	public void update(TradeDTO dto) throws Exception {
 		con = pool.getConnection();
 		
-		String sql = "update Trade set name = ? , price = ? where no = ?";
+		String sql = "update Trade set name = ? , price = ? content = ? where no = ?";
 		
 		ps = con.prepareStatement(sql);
 		
 		ps.setString(1, dto.getName());
 		ps.setString(2, dto.getPrice());
-		ps.setInt(3, dto.getNo());
+		ps.setString(3, dto.getContent());
+		ps.setInt(4, dto.getNo());
 		
 		ps.executeUpdate();
 		
@@ -127,6 +128,8 @@ public class TradeDAO {
 			dto.setWriter(rs.getString(4));
 			dto.setCount(rs.getInt(5));
 			dto.setStatus(rs.getInt(6));
+			dto.setReport(rs.getInt(7));
+			dto.setContent(rs.getString(8));
 		}
 		
 		pool.freeConnection(con, ps);
@@ -155,6 +158,7 @@ public class TradeDAO {
 			dto.setCount(rs.getInt(5));
 			dto.setStatus(rs.getInt(6));
 			dto.setReport(rs.getInt(7));
+			dto.setContent(rs.getString(8));
 		
 			list.add(dto);
 		}
@@ -183,7 +187,7 @@ public class TradeDAO {
 			dto.setCount(rs.getInt(5));
 			dto.setStatus(rs.getInt(6));
 			dto.setReport(rs.getInt(7));
-		
+			dto.setContent(rs.getString(8));
 			list.add(dto);
 		}
 		
@@ -212,7 +216,7 @@ public class TradeDAO {
 			dto.setCount(rs.getInt(5));
 			dto.setStatus(rs.getInt(6));
 			dto.setReport(rs.getInt(7));
-			
+			dto.setContent(rs.getString(8));
 			list.add(dto);
 		}
 		
@@ -240,7 +244,7 @@ public class TradeDAO {
 			dto.setCount(rs.getInt(5));
 			dto.setStatus(rs.getInt(6));
 			dto.setReport(rs.getInt(7));
-			
+			dto.setContent(rs.getString(8));
 			list.add(dto);
 		}
 		

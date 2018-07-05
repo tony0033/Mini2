@@ -5,8 +5,15 @@ public class TradeDTO {
 	private String name;
 	private String price;
 	private String writer;
+	private String content;
 	private int count;
 	private int status;
+	public String getContent() {
+		return content;
+	}
+	public void setContent(String content) {
+		this.content = content;
+	}
 	private int report;
 	
 	public int getNo() {

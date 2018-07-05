@@ -48,11 +48,8 @@
 	</table>
 	<table>
 	<tr>
-<<<<<<< HEAD
 	 <td rowspan="2"><input type="submit" value="저장"></td>
-=======
 	 <td>수정된 내용 저장<input type="submit" value="저장"></td>
->>>>>>> refs/remotes/origin/master
 	</tr> 	
 	</table>
 </form>
