@@ -12,15 +12,17 @@
 </head>
 <body>
 	<center>
-		<table border="1">
+		<table class="type1">
+			<thead>
 			<tr>
-				<td align="center" width="10px">no</td>
-				<td align="center" width="200px">이 름</td>
-				<td align="center" width="200px">가 격</td>
-				<td align="center" width="100px">작성자</td>
-				<td align="center" width="50px">조회수</td>
-				<td align="center" width="50px">신고수</td>
+				<th align="center" width="10px">no</th>
+				<th align="center" width="200px">이 름</th>
+				<th align="center" width="200px">가 격</th>
+				<th align="center" width="100px">작성자</th>
+				<th align="center" width="50px">조회수</th>
+				<th align="center" width="50px">신고수</th>
 			</tr>
+			</thead>
 			<%
 				TradeDAO dao3 = new TradeDAO();
 				int pageNum1;
@@ -36,8 +38,9 @@
 					TradeDTO dto = (TradeDTO) list1.get(i);
 					if(dto.getReport()>=1){
 			%>
+			<tbody>
 			<tr>
-				<td align="center" width="10px"><%=dto.getNo()%></td>
+				<th align="center" width="10px"><%=dto.getNo()%></th>
 				<td align="center" width="200px">
 					<a href="trade/tCountUp.jsp?no=<%=dto.getNo()%>"><%=dto.getName()%></a>
 				</td>
@@ -50,6 +53,7 @@
 					}
 				}
 			%>
+			</tbody>
 		</table>
 		<table width="630px">
 			<tr>

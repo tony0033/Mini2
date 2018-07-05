@@ -12,17 +12,19 @@
 <body>
 
 	<center>
-		<table border="1">
+		<table class="type1">
+			<thead>
 			<tr>
-				<td align="center" width="10px">no</td>
-				<td align="center" width="250px">제목</td>
-				<td align="center" width="100px">작성자</td>
-				<td align="center" width="50px">조회수</td>
-				<td align="center" width="50px">추천수</td>
-				<td align="cetner" width="50px">신고수</td>
-				<td align="center" width="100px">날 짜</td>
+				<th align="center" width="10px">no</th>
+				<th align="center" width="250px">제목</th>
+				<th align="center" width="100px">작성자</th>
+				<th align="center" width="50px">조회수</th>
+				<th align="center" width="50px">추천수</th>
+				<th align="cetner" width="50px">신고수</th>
+				<th align="center" width="100px">날 짜</th>
 
 			</tr>
+			</thead>
 			<%
 				BBSDAO dao1 = new BBSDAO();
 				int pageNum;
@@ -39,8 +41,9 @@
 					BBSDTO dto1 = (BBSDTO) list.get(i);
 					if (dto1.getReport() >= 1) {
 			%>
+			<tbody>
 			<tr>
-				<td align="center" width="10px"><%=dto1.getNo()%></td>
+				<th align="center" width="10px"><%=dto1.getNo()%></th>
 				<td align="center" width="250px"><a
 					href="bbs/countUp.jsp?no=<%=dto1.getNo()%>"><%=dto1.getTitle()%></a></td>
 				<td align="center" width="100px"><%=dto1.getWriter()%></td>
@@ -53,6 +56,7 @@
 												}
 											}
 										%>
+		</tbody>
 		</table>
 		<table width="630px">
 			<tr>

@@ -20,18 +20,20 @@
 						<div id = "report">
 							<img src=/CommuProject/img/memberall.png id="picture">
 								<center>
-									<table border="1">
+									<table class="type1">
+										<thead>
 										<tr>
-											<td align="center" width="100px">아이디</td>
-											<td align="center" width="100px">이름</td>
-											<td align="center" width="100px">유료포인트</td>
-											<td align="center" width="100px">무료포인트</td>
-											<td align="center" width="100px">삭제횟수</td>
-											<td align="center" width="100px">최근로그인</td>
-											<td align="center" width="50px">수정</td>
-											<td align="center" width="50px">삭제</td>
+											<th align="center" width="100px">아이디</th>
+											<th align="center" width="100px">이름</th>
+											<th align="center" width="100px">유료포인트</th>
+											<th align="center" width="100px">무료포인트</th>
+											<th align="center" width="100px">삭제횟수</th>
+											<th align="center" width="100px">최근로그인</th>
+											<th align="center" width="50px">수정</th>
+											<th align="center" width="50px">삭제</th>
 
 										</tr>
+										</thead>
 										<%
 											MemberDAO dao1 = new MemberDAO();
 											int pageNum;
@@ -47,8 +49,9 @@
 											for (int i = 0; i < list.size(); i++) {
 												MemberDTO dto1 = (MemberDTO) list.get(i);
 										%>
+										<tbody>
 										<tr>
-											<td align="center" width="100px"><%=dto1.getId()%></td>
+											<th align="center" width="100px"><%=dto1.getId()%></th>
 											<td align="center" width="100px"><%=dto1.getName()%></td>
 											<td align="center" width="100px"><%=dto1.getPay()%></td>
 											<td align="center" width="100px"><%=dto1.getFree()%></td>
@@ -64,6 +67,7 @@
 										<%
 											}
 										%>
+										</tbody>
 									</table>
 									<table width="730px">
 										<tr>
